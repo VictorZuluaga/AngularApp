@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { FormsRoutingModule } from './forms-routing.module';
+import { FormsModule } from '@angular/forms'
 
 
 
@@ -9,7 +10,9 @@ import { FormsRoutingModule } from './forms-routing.module';
   declarations: [ LoginComponent ],
   imports: [
     CommonModule,
-    FormsRoutingModule
+    FormsRoutingModule,
+    FormsModule,
+    FormsModule
   ]
 })
-export class FormsModule { }
+export class CFormsModule { }

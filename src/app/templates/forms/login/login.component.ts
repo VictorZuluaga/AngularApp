@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './login.component.html',
   styleUrls: [ '../forms.css', './login.component.css' ]
 })
-export class LoginComponent { }
+export class LoginComponent {
+  constructor() { }
+
+  email: String = ""
+  password: String = ""
+  showError: Boolean = true
+}

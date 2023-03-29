@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: "forms",
-    loadChildren: () => import('./templates/forms/forms.module').then(m => m.FormsModule)
+    loadChildren: () => import('./templates/forms/cforms.module').then(m => m.CFormsModule)
   }
 ];
 
