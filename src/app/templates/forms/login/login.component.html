@@ -17,12 +17,12 @@
         </form>
 
         <div class="link-container">
-            <a href="/forms/signup">¿no estás registrado?</a>
+            <a href="/auth/signup">¿no estás registrado?</a>
         </div>
 
         <p *ngIf="showError" class="error-msg">El email no existe</p>
 
-        <button type="submit" form="login-form">Log In</button>
+        <button (click)="btnHandler()" type="submit" form="login-form">Log In</button>
 
     </section>
 </div>

@@ -10,5 +10,7 @@ export class LoginComponent {
 
   email: String = ""
   password: String = ""
-  showError: Boolean = true
+  showError: Boolean = false
+
+  btnHandler: () => void = () => console.log(`email: ${this.email}, password: ${this.password}`, event?.target)
 }
