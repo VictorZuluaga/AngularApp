@@ -1,0 +1,28 @@
+<div class="semi-modal flex">
+    <section>
+        <h2>Log In</h2>
+        <hr>
+        <form id="login-form" class="flex" method="post">
+
+            <fieldset class="flex">
+                <label for="email">email</label>
+                <input [(ngModel)]="email" type="email" id="email" name="email" placeholder="escribe aquí tu email..."
+                    required>
+            </fieldset>
+            <fieldset class="flex">
+                <label for="password">contraseña</label>
+                <input [(ngModel)]="password" type="password" id="password" name="password"
+                    placeholder="escribe aquí tu contraseña..." required>
+            </fieldset>
+        </form>
+
+        <div class="link-container">
+            <a href="/auth/signup">¿no estás registrado?</a>
+        </div>
+
+        <p *ngIf="showError" class="error-msg">El email no existe</p>
+
+        <button (click)="btnHandler()" type="submit" form="login-form">Log In</button>
+
+    </section>
+</div>
