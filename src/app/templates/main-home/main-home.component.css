@@ -1,0 +1,6 @@
+* {
+    list-style: none;
+    font-size: 1.05rem;
+    text-decoration: none !important;
+    color: var(--negro);
+}
