@@ -21,8 +21,6 @@
 .header .nav-links a,
 .header .other-links a{
     text-decoration: none;
-    margin: 1rem;
-    display: block;
     display: inline-block;
     margin-right: 1rem;
     color: var(--azul_oscuro);
@@ -138,6 +136,10 @@
 
     /* Para que los enlaces se vean cada uno en una línea
     y no horizontalmente (o sea, quitarle el display inline-block) */
+    .header .nav-links a {
+        margin: 1rem;
+        display: block;
+    }
 
     .header .busqueda.active {
         left: 0;
