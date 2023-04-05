@@ -1,0 +1,32 @@
+{
+    "title": "Contacto",
+        "description": "Si desea contactar con nosotros, tiene múltiples opciones: ",
+        "h2": ["Teléfono", "Dirección postal", "Correo electrónico"],
+        "telephone":{
+            "title": "Teléfono",
+            "icon": "assets/icons/telefono.svg",
+            "data": [
+                "Oficina general: +34 928 12 34 56",
+                "Atención al cliente: +34 928 78 90 12",
+                "Publicidad: +34 928 77 77 77",
+                "Redacción: +34 928 88 88 88"                
+            ]
+        },
+        "address":{
+            "title": "Dirección postal",
+            "icon": "assets/icons/direccionPostal.svg",
+            "data": [
+                "Oficina general: Calle PWM Bloque 5 Piso 3C",
+                "Atención al cliente: Calle PWM Bloque 5 Piso 3B"
+            ]
+        },
+        "email":{
+            "title":"Correo electrónico",
+            "icon":"assets/icons/correoElectronico.svg",
+            "data":[
+                "Director: director_maximo@paginawebsinnombre.com",
+                "Atención al cliente: atencion_cliente@paginawebsinnombre.com",
+                "Publicidad: publicidad@paginawebsinnombre.com"
+            ]
+        }     
+}

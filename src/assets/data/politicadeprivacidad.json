@@ -1,0 +1,33 @@
+{
+    "title": "Política de privacidad",
+    "data":[
+        {
+            "title": "1. Introducción y definiciones",
+            "description": "In a mattis eros, eget facilisis odio. Fusce in est mollis, egestas ligula vel, volutpat libero. Etiam sed ex pellentesque turpis malesuada posuere ut ac mauris. Maecenas congue ex in aliquet porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum lobortis purus quis auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer nec suscipit velit, ut venenatis dolor. Nunc ac semper elit. Integer gravida arcu eros, iaculis dignissim lacus tincidunt vel. Nulla sed elit eu turpis tincidunt mattis. Vivamus urna arcu, efficitur ut accumsan sit amet, porttitor ac dolor. Morbi sed felis vel turpis rhoncus consequat. Integer vitae lectus ac nisi aliquam maximus ac quis nisl. Proin scelerisque, felis vel suscipit gravida, erat ligula hendrerit tortor, ut accumsan nunc sem sed libero."
+        },
+        {
+            "title": "2. Cumplimiento de la normativa vigente",
+            "description": "Morbi ligula arcu, tempus venenatis neque vel, rhoncus cursus lectus. Fusce sem mi, sollicitudin sed dapibus vitae, tincidunt id nisi. Proin feugiat lobortis lacus quis ornare. Aliquam erat volutpat. Praesent accumsan neque lorem, a tristique mi sagittis ultricies. Maecenas eu ante mattis, tincidunt nulla nec, viverra ex. Aliquam at tortor venenatis, egestas massa in, sollicitudin metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent sit amet lacus id tortor porttitor rhoncus et vel nisi."
+        },
+        {
+            "title": "3. Responsable del fichero",
+            "description": "Donec ullamcorper nisl erat, et tempus dui auctor sed. Praesent vel convallis sapien, sed maximus lorem. Donec porta ut sapien eget mattis. Pellentesque velit elit, tempor nec efficitur ut, porta non leo. Sed ipsum nisl, ultrices quis rhoncus ac, condimentum ac dolor. Etiam sed gravida turpis, facilisis dignissim neque. Aliquam at tincidunt ex."
+        },
+        {
+            "title": "4. Finalidad del tratamiento de los datos personales del usuario",
+            "description": "Nullam scelerisque facilisis libero non laoreet. Pellentesque at libero quis urna ultrices pellentesque. Donec rhoncus condimentum pretium. Aliquam facilisis purus et ullamcorper sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam tincidunt rutrum orci, non hendrerit dui pellentesque mattis. Aliquam laoreet venenatis massa at feugiat. Duis ante nisi, elementum in pretium quis, facilisis ut leo. Praesent sapien tortor, auctor efficitur pulvinar vitae, sollicitudin sit amet eros. Morbi vitae libero dictum, fringilla mauris non, pulvinar neque. Curabitur pulvinar et felis sit amet semper. Quisque a magna condimentum, maximus velit vel, condimentum arcu."
+        },
+        {
+            "title": "5. Tipos de datos recogidos",
+            "description": "Maecenas laoreet faucibus dignissim. Aliquam vitae gravida lorem. Maecenas interdum leo diam, vel vulputate lorem placerat eu. Aliquam sed est bibendum, blandit dui non, iaculis quam. Duis semper massa nibh. Maecenas laoreet ipsum sit amet erat varius interdum. Vivamus bibendum turpis venenatis felis tincidunt consequat sed at metus. Fusce nec egestas ante. Sed dictum dapibus tincidunt."
+        },
+        {
+            "title": "6. Datos compartidos con terceros",
+            "description": "Duis sit amet ullamcorper arcu. Mauris bibendum dapibus auctor. Nulla pulvinar dolor volutpat, luctus felis eu, porttitor odio. Proin aliquet congue sagittis. Nulla sit amet ex et justo laoreet faucibus et vitae arcu. Aliquam commodo turpis quis laoreet tempor. Quisque ex libero, imperdiet ac gravida sodales, ullamcorper non orci. In in metus non turpis hendrerit vehicula. Duis eget porta nibh, sit amet ornare nunc. Nunc vitae orci vel magna rutrum consequat. Nulla vel erat semper, aliquam velit at, pellentesque augue. Maecenas sed accumsan nisl."
+        },
+        {
+            "title": "7. Menores de edad",
+            "description": "Nunc a sapien in justo dictum tristique. Sed erat libero, ornare vel placerat non, pulvinar sagittis odio. Cras aliquam purus eu posuere tincidunt. Integer et eleifend purus, vel eleifend metus. Aliquam volutpat est nec metus tincidunt molestie. Proin nec pharetra erat, nec elementum erat. Morbi ac pretium sapien. Phasellus nisl elit, varius et volutpat quis, dictum eu dui. Sed ut orci a dolor congue imperdiet."
+        }
+    ]
+}
