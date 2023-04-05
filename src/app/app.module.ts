@@ -7,6 +7,7 @@ import { HeaderComponent } from './sharedComponents/header/header.component';
 import { MainHomeComponent } from './templates/main-home/main-home.component';
 import { ArticulosPrincipalesComponent } from './templates/main-home/articulos-principales/articulos-principales.component';
 import { ArticulosSecundariosComponent } from './templates/main-home/articulos-secundarios/articulos-secundarios.component';
+import { ListaVideosComponent } from './templates/main-home/lista-videos/lista-videos.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ArticulosSecundariosComponent } from './templates/main-home/articulos-s
     HeaderComponent,
     MainHomeComponent,
     ArticulosPrincipalesComponent,
-    ArticulosSecundariosComponent
+    ArticulosSecundariosComponent,
+    ListaVideosComponent
   ],
   imports: [
     BrowserModule,

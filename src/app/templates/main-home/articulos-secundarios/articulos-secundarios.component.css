@@ -45,19 +45,19 @@
 
 /*separador o titulo de la lista*/
 .separador .top {
-    width: 99%;
+    width: 99.9%;
     border-top: 0.2rem solid #000000;
     margin: 0.5% 0;
 }
 
 .separador .bottom {
-    width: 99%;
+    width: 99.9%;
     border-top: 0.1rem solid #000000;
     margin: 0.5% 0;
 }
 
 .separador p {
-    font-size: x-large;
+    font-size: large;
     text-align: left;
     margin-left: 3rem;
     text-transform: uppercase;
