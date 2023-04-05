@@ -1,4 +1,4 @@
-import { Component, ViewChild, Renderer2, ElementRef, OnInit, AfterViewInit } from '@angular/core';
+import { Component, Renderer2, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,19 +6,12 @@ import { Component, ViewChild, Renderer2, ElementRef, OnInit, AfterViewInit } fr
   styleUrls: ['./header.component.css']
 })
 
-export class HeaderComponent implements OnInit, AfterViewInit {
-
-  @ViewChild('header') header!: ElementRef;
+export class HeaderComponent implements AfterViewInit {
 
   constructor(private renderer2: Renderer2) { }
 
-  ngOnInit(): void {
-    console.log("me ejecuto al inicio");
-  }
-
   ngAfterViewInit(): void {
 
-    const header = this.header.nativeElement;
     //cuatro elementos dentro del header
     const hamburger = document.querySelector(".header .hamburger");
     const busqueda = document.querySelector(".header .busqueda");
@@ -32,7 +25,5 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       otherLinks!.classList.toggle("active");
     });
   }
-
-
 
 }
