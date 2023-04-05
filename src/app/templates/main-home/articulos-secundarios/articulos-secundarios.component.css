@@ -1,0 +1,71 @@
+* {
+    list-style: none;
+    font-size: 1.05rem;
+    text-decoration: none !important;
+    color: var(--negro);
+}
+
+.cuatro-articulos .titulo {
+    font-size: x-large;
+}
+
+.cuatro-articulos .datos {
+    font-size: small;
+    font-style: italic;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.cuatro-articulos .titulo:hover,
+.cuatro-articulos .datos:hover {
+    color: var(--azul_oscuro);
+    transition: 200ms;
+}
+
+.cuatro-articulos {
+    display: flex;
+}
+
+.cuatro-articulos img {
+    width: 100%;
+}
+
+.cuatro-articulos div {
+    text-align: center;
+    padding: 0.5%;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    width: 50%;
+}
+
+.cuatro-articulos a,
+.cuatro-articulos h4 {
+    font-size: 1.2rem !important;
+}
+
+.cuatro-articulos h2,
+.cuatro-articulos p {
+    text-align: center;
+}
+
+/*separador o titulo de la lista*/
+.separador .top {
+    width: 99%;
+    border-top: 0.2rem solid #000000;
+    margin: 0.5% 0;
+}
+
+.separador .bottom {
+    width: 99%;
+    border-top: 0.1rem solid #000000;
+    margin: 0.5% 0;
+}
+
+.separador p {
+    font-size: x-large;
+    text-align: left;
+    margin-left: 3rem;
+    text-transform: uppercase;
+}
