@@ -1,0 +1,158 @@
+/*-------HEADER-------*/
+
+.header {
+    background-color: var(--negro);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.header .nav-links ,
+.header .other-links{
+    list-style: none;
+    text-decoration: none;
+}
+.header .nav-links a,
+.header .other-links a{
+    text-decoration: none;
+    margin: 1rem;
+    display: block;
+    display: inline-block;
+    margin-right: 1rem;
+    color: var(--azul_oscuro);
+}
+
+.header .logo img {
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+.header .busqueda img {
+    height: 2rem;
+    cursor: pointer;
+}
+
+.header a:hover,
+.header img:hover {
+    transform: scale(1.1);
+    transition: 200ms;
+}
+
+
+.header .busqueda input[type="text"] {
+    border: 0.1rem solid var(--gris);
+    border-radius: 0.5rem;
+    width: 15rem;
+    margin-right: 1.2rem;
+}
+
+.header .hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.logged {
+    color: rgb(50, 200, 50) !important;
+}
+
+.logged-img {
+    width: 1.8rem;
+    margin-right: .5rem
+}
+
+
+/* Tablet */
+@media screen and (max-width: 1050px) {
+    .header .hamburger {
+        display: block;
+        color: var(--azul_oscuro);
+        font-size: 2.5rem;
+    }
+
+    .header .hamburger:hover {
+        transform: scale(1.1);
+        transition: 200ms;
+    }
+
+    /* Desaparecen en esta resolución */
+    .header .other-links {
+        position: fixed;
+        left: -100%;
+        background-color: var(--negro);
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Eliminamos el enlace de Inicio,
+    supuestamente ya no hace falta en responsive, según 
+    el figma...*/
+    .header .nav-links a:first-child {
+        display: none;
+    }
+
+    .header .other-links a {
+        margin: 1rem;
+        display: block;
+    }
+
+    .header .other-links.active {
+        left: 0;
+        top: 3rem;
+        display: block;
+    }
+}
+
+/* Móviles */
+@media screen and (max-width: 710px) {
+
+    /* No hay ECONOMIA-POLITICA-CULTURA ni buscador 
+    en móviles */
+    .header {
+        justify-content: flex-start;
+    }
+
+    .header .logo img {
+        margin-left: 1rem;
+    }
+
+    .header .hamburger {
+        position: absolute;
+        right: 1rem;
+    }
+
+    .header .nav-links,
+    .header .busqueda {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        background-color: var(--negro);
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Para que los enlaces se vean cada uno en una línea
+    y no horizontalmente (o sea, quitarle el display inline-block) */
+
+    .header .busqueda.active {
+        left: 0;
+        top: 3rem;
+    }
+
+    .header .nav-links.active {
+        left: 0;
+        top: 5rem;
+        display: block;
+    }
+
+    .header .other-links.active {
+        left: 0;
+        top: 12.5rem;
+        display: block;
+    }
+}
