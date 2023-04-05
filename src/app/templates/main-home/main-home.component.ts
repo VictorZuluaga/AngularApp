@@ -10,6 +10,5 @@ export class MainHomeComponent {
   
   ngAfterViewInit(): void {
     console.log("todo ok");
-    const elemento = document.querySelector('articulos-principales');
   }
 }
