@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http'
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './sharedComponents/header/header.component';
 import { MainHomeComponent } from './templates/main-home/main-home.component';
@@ -20,7 +21,8 @@ import { ListaVideosComponent } from './templates/main-home/lista-videos/lista-v
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
