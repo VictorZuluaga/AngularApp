@@ -9,6 +9,7 @@ import { HttpClient} from '@angular/common/http';
 export class ArticulosSecundariosComponent implements OnInit{
 
   private urlAPI = "http://localhost:3000/articulos-secundarios";
+  categoria = "El tiempo";
 
   constructor(private http: HttpClient){};
 
