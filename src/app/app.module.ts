@@ -9,6 +9,8 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { PoliticaDeCookiesComponent } from './politica-de-cookies/politica-de-cookies.component';
 import { PoliticaDePrivacidadComponent } from './politica-de-privacidad/politica-de-privacidad.component';
 import { RouterModule} from '@angular/router';
+import { SignupComponent } from './templates/forms/signup/signup.component';
+import { FormsRoutingModule } from './templates/forms/forms-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { RouterModule} from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsRoutingModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

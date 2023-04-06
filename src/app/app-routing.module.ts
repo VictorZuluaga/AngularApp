@@ -5,6 +5,7 @@ import { AvisoLegalComponent } from './aviso-legal/aviso-legal.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { PoliticaDeCookiesComponent } from './politica-de-cookies/politica-de-cookies.component';
 import { PoliticaDePrivacidadComponent } from './politica-de-privacidad/politica-de-privacidad.component';
+import { LoginComponent } from './templates/forms/login/login.component';
 
 
 const routes: Routes = [
