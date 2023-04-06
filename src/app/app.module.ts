@@ -9,6 +9,9 @@ import { MainHomeComponent } from './templates/main-home/main-home.component';
 import { ArticulosPrincipalesComponent } from './templates/main-home/articulos-principales/articulos-principales.component';
 import { ArticulosSecundariosComponent } from './templates/main-home/articulos-secundarios/articulos-secundarios.component';
 import { ListaVideosComponent } from './templates/main-home/lista-videos/lista-videos.component';
+import { PaginaArticleComponent } from './templates/pagina-article/pagina-article.component';
+import { ArticleComponent } from './templates/pagina-article/article/article.component';
+import { CajaComentariosComponent } from './templates/pagina-article/caja-comentarios/caja-comentarios.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ListaVideosComponent } from './templates/main-home/lista-videos/lista-v
     MainHomeComponent,
     ArticulosPrincipalesComponent,
     ArticulosSecundariosComponent,
-    ListaVideosComponent
+    ListaVideosComponent,
+    PaginaArticleComponent,
+    ArticleComponent,
+    CajaComentariosComponent
   ],
   imports: [
     BrowserModule,

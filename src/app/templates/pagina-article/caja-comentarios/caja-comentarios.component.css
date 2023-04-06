@@ -1,0 +1,55 @@
+.caja-comentarios h2 {
+    text-align: left;
+    margin-left: 1rem;
+    font-size: medium;
+}
+
+.comentarios-publicados {
+    border-bottom: solid #ccc;
+    border-top: solid #ccc;
+    width: 100%;
+    height: 10%;
+    display: flex;
+}
+
+.contenido {
+    display: inline-block;
+    padding: 2rem;
+}
+
+.contenido p {
+    margin: 0;
+}
+
+.usuario {
+    display: inline-block;
+    width: 20%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.usuario img {
+    width: 5rem;
+}
+
+.publicar-comentario {
+    display: flex;
+    margin-left: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.publicar-comentario button {
+    margin-left: 1.5rem;
+    background-color: var(--azul_oscuro);
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.publicar-comentario textarea {
+    width: 20rem;
+}

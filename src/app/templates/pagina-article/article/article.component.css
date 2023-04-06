@@ -1,0 +1,88 @@
+.articulo {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+}
+.articulo .imagen-articulo {
+    width: 100%;
+    border-radius: 10px;
+}
+.articulo .titulo-articulo{
+    font-size: xx-large;
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-style: bold;
+}
+
+.articulo-primera-parte {
+    width: 70%;
+    padding: 1rem;
+    border-right: solid #ccc;
+    text-align: center;
+}
+.articulo .pie-de-foto-articulo,
+.articulo .datos-articulo,
+.articulo .fecha-articulo{
+    text-align: right;
+    margin-bottom: 0px;
+    margin-top: 0.2rem;
+    font-size: medium;
+}
+
+.articulo .contenido-articulo,
+.articulo .entrada-articulo{
+    margin-top: 1rem;
+    font-size: large;
+}
+
+.articulo .articulo-segunda-parte {
+    width: 30%;
+    padding: 1rem;
+}
+
+.articulo .articulo-segunda-parte h3 {
+    text-transform: uppercase;
+    font-style: bold;
+}
+
+.articulo .articulo-segunda-parte ol li {
+    font-size: medium;
+    margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
+    list-style-type: decimal;
+    color: var(--negro);
+    text-decoration: none !important;
+}
+.articulo .articulo-segunda-parte a,
+.articulo .articulo-primera-parte a{
+    text-decoration: none;
+    color: var(--negro);
+}
+
+.articulo-segunda-parte ol {
+    margin-bottom: 2rem;
+}
+/*tablet*/
+@media screen and (max-width: 835px) {
+
+    /*css tablet articulo*/
+    .articulo{
+        display: block;
+    }
+
+    .articulo .articulo-primera-parte{
+        width: 100%;
+        padding: 1rem;
+        border-right: none;
+        border-top: #000000;
+    }
+    .articulo .articulo-segunda-parte{
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+    
+
+}
