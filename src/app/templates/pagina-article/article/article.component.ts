@@ -10,10 +10,13 @@ export class ArticleComponent implements OnInit{
 
   constructor(private http: HttpClient){};
 
-  private urlAPI = "http://localhost:3000/article";
+  private urlAPI1 = "http://localhost:3000/article";
+  private urlAPI2 = "http://localhost:3000/articulos_mas_vistos";
+  private urlAPI3 = "http://localhost:3000/articulos_relacionados";
+
 
   ngOnInit(): void {
-    this.http.get<any>(this.urlAPI).subscribe((data)=>{
+    this.http.get<any>(this.urlAPI1).subscribe((data)=>{
       
       const articulo_primera_parte = document.querySelector('.articulo-primera-parte');
 
@@ -32,6 +35,34 @@ export class ArticleComponent implements OnInit{
       datos_articulo!.textContent = data[0].datos;
       fecha_articulo!.textContent = data[0].fecha;
       contenido_articulo!.textContent = data[0].contenido;
+
+    });
+
+    this.http.get<any>(this.urlAPI2).subscribe((data)=>{
+      
+      const articulo_segunda_parte = document.querySelector('.articulo-segunda-parte');
+
+      const titulo = articulo_segunda_parte!.querySelector('h3');
+      const lista_articulo = articulo_segunda_parte!.querySelectorAll('li');
+
+      titulo!.textContent = data[0].titulo_mas_vistos;
+      lista_articulo[0].textContent = data[0].articulo1_mas_vistos;
+      lista_articulo[1].textContent = data[0].articulo2_mas_vistos;
+      lista_articulo[2].textContent = data[0].articulo3_mas_vistos;
+
+    });
+
+    this.http.get<any>(this.urlAPI3).subscribe((data)=>{
+      
+      const articulo_segunda_parte = document.querySelector('.articulo-segunda-parte');
+
+      const titulo = articulo_segunda_parte!.querySelectorAll('h3');
+      const lista_articulo = articulo_segunda_parte!.querySelectorAll('li');
+
+      titulo[1]!.textContent = data[0].titulo_relacionados;
+      lista_articulo[3].textContent = data[0].articulo1_relacionados;
+      lista_articulo[4].textContent = data[0].articulo2_relacionados;
+      lista_articulo[5].textContent = data[0].articulo3_relacionados;
 
     });
   }
