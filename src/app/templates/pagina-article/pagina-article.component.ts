@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./pagina-article.component.css']
 })
 export class PaginaArticleComponent {
-  titulo = "ECONOMÍA";
 }
