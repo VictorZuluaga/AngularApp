@@ -9,6 +9,5 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 export class MainHomeComponent {
   
   ngAfterViewInit(): void {
-    console.log("todo ok");
   }
 }
