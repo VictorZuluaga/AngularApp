@@ -28,7 +28,7 @@
     ],
     "sub_button":"SUSCRIBIRSE",
     "subEmpresa":{
-        "icono": "../icons/iconoEmpresa.svg",
+        "icono": "assets/icons/iconoEmpresa.svg",
         "title": "Suscripciones para empresas",
         "ventajas": "✔ Atención personalizada ✔ Tarifas y precios adecuados para ti ✔ Mayor flexibilidad para pagar",
         "button": "Me interesa"
