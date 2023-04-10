@@ -7,6 +7,7 @@ import { PoliticaDeCookiesComponent } from './templates/politica-de-cookies/poli
 import { PoliticaDePrivacidadComponent } from './templates/politica-de-privacidad/politica-de-privacidad.component';
 import { LoginComponent } from './templates/forms/login/login.component';
 import { SubscribeComponent } from './templates/subscribe/subscribe.component';
+import { MainHomeComponent } from './templates/main-home/main-home.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,9 @@ const routes: Routes = [
   },
   {
     path: 'subscribe', component: SubscribeComponent
+  },
+  {
+    path: 'main-home', component: MainHomeComponent
   }
 ];
 

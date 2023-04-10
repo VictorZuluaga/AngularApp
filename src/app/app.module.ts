@@ -30,7 +30,7 @@ import { CajaComentariosComponent } from './templates/pagina-article/caja-coment
     ContactoComponent,
     PoliticaDeCookiesComponent,
     PoliticaDePrivacidadComponent,
-    SubscribeComponent
+    SubscribeComponent,
     AppComponent,
     HeaderComponent,
     MainHomeComponent,
@@ -44,7 +44,7 @@ import { CajaComentariosComponent } from './templates/pagina-article/caja-coment
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsRoutingModule
+    FormsRoutingModule,
     AppRoutingModule,
     HttpClientModule
   ],
