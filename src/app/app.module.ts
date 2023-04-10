@@ -11,6 +11,7 @@ import { PoliticaDePrivacidadComponent } from './templates/politica-de-privacida
 import { RouterModule} from '@angular/router';
 import { SignupComponent } from './templates/forms/signup/signup.component';
 import { FormsRoutingModule } from './templates/forms/forms-routing.module';
+import { SubscribeComponent } from './templates/subscribe/subscribe.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsRoutingModule } from './templates/forms/forms-routing.module';
     AvisoLegalComponent,
     ContactoComponent,
     PoliticaDeCookiesComponent,
-    PoliticaDePrivacidadComponent
+    PoliticaDePrivacidadComponent,
+    SubscribeComponent
   ],
   imports: [
     BrowserModule,

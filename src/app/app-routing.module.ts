@@ -6,6 +6,7 @@ import { ContactoComponent } from './templates/contacto/contacto.component';
 import { PoliticaDeCookiesComponent } from './templates/politica-de-cookies/politica-de-cookies.component';
 import { PoliticaDePrivacidadComponent } from './templates/politica-de-privacidad/politica-de-privacidad.component';
 import { LoginComponent } from './templates/forms/login/login.component';
+import { SubscribeComponent } from './templates/subscribe/subscribe.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,9 @@ const routes: Routes = [
   },
   {
     path: 'politica-de-privacidad', component: PoliticaDePrivacidadComponent
+  },
+  {
+    path: 'subscribe', component: SubscribeComponent
   }
 ];
 
