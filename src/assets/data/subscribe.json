@@ -1,0 +1,36 @@
+{
+    "cuadrados":[
+        {
+            "suscripcion_tipo":"SUSCRIPCIÓN MENSUAL",
+            "suscripcion_ventajas":[
+                "Acceso a todas las noticias de la web durante un mes",
+                "Newsletter exclusiva para suscriptores",
+                "Descarga de noticias para lectura sin conexión"
+            ]
+        },
+        {
+            "suscripcion_tipo":"SUSCRIPCIÓN ANUAL",
+            "suscripcion_ventajas":[
+                "Acceso a todas las noticias de la web durante un año",
+                "Newsletter exclusiva para suscriptores",
+                "Descarga de noticias para lectura sin conexión"
+            ]
+        },
+        {
+            "suscripcion_tipo":"SUSCRIPCIÓN MENSUAL + COPIA EN PAPEL",
+            "suscripcion_ventajas":[
+                "Acceso a todas las noticias de la web durante un mes",
+                "Newsletter exclusiva para suscriptores",
+                "Descarga de noticias para lectura sin conexión",
+                "Te enviamos una copia en papel a tu domicilio"
+            ]
+        }
+    ],
+    "sub_button":"SUSCRIBIRSE",
+    "subEmpresa":{
+        "icono": "../icons/iconoEmpresa.svg",
+        "title": "Suscripciones para empresas",
+        "ventajas": "✔ Atención personalizada ✔ Tarifas y precios adecuados para ti ✔ Mayor flexibilidad para pagar",
+        "button": "Me interesa"
+    }    
+}

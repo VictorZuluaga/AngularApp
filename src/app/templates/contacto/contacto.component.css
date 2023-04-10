@@ -1,0 +1,24 @@
+.generic-container{
+    margin-left: 1rem;
+}
+
+.generic-container h1{
+    margin-top: 3.5rem;
+}
+
+.headerContacto h2 {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.headerContacto img {
+    width: 2rem;
+    height: 2rem;
+}
+
+@media screen and (max-width: 710px){    
+    .generic-container{
+        font-size: 0.8rem;
+    }
+}

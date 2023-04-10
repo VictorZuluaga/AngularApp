@@ -1,0 +1,79 @@
+.contenedor-cuadrados {    
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: disc;        
+}
+
+.cuadrado_sub {
+    background-color: gainsboro;    
+    padding: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.cuadrado_sub h2 {
+    text-align: center;
+    padding-top: 1em;
+
+}
+
+.cuadrado_sub ul {
+    display: block;
+    list-style-position: inside;
+    margin-bottom: 1.5rem;
+}
+
+/* BOTÓN DE SUSCRIBIRSE */
+.subButton {
+    background-color: #5095AD;
+    color: black;
+    border: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+/* ------------------- */
+.subEmpresa {
+    text-align: center;
+}
+
+.subEmpresa img {
+    margin-top: 2em;
+}
+
+.subEmpresa p {
+    text-align: center;
+}
+
+
+/* --- */
+.generic-container {
+    margin: 2rem;
+}
+
+@media screen and (max-width: 1100px){
+    /* Mover primer cuadrado */
+    .contenedor-cuadrados {            
+        flex-wrap: wrap;
+        justify-content: center;      
+    }
+
+    .cuadrado_sub{
+        width: 50%;
+        margin: 10px;
+    }    
+}
+
+@media screen and (max-width: 710px){    
+    .cuadrado_sub{
+        width: 70%;
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+}

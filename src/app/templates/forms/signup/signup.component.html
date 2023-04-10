@@ -1,0 +1,25 @@
+<div class="semi-modal flex">
+    <section>
+        <h2>Sign up</h2>
+        <hr>
+        <form id="signup-form" class="flex" method="post" action="//TODO">
+
+            <fieldset class="flex">
+                <label for="email">email</label>
+                <input [(ngModel)]="email" type="email" id="email" name="email" placeholder="escribe aquí tu email..." required>
+            </fieldset>
+            <fieldset>
+                <label for="password">contraseña</label>
+                <input [(ngModel)]="password" type="password" id="password" name="password" placeholder="escribe aquí tu contraseña..."
+                    required>
+            </fieldset>
+            <fieldset>
+                <label for="repeat-password">repetir contraseña</label>
+                <input [(ngModel)]="repeat_password" type="password" id="repeat-password" name="repeat-password"
+                    placeholder="repite aquí tu contraseña..." required>
+            </fieldset>
+        </form>
+
+        <button (click)="btnHandler()" type="submit" form="signup-form">Sign up</button>
+    </section>
+</div>

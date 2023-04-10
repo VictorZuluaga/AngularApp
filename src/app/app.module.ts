@@ -4,6 +4,15 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
+import { FooterComponent } from './sharedComponents/footer/footer.component';
+import { AvisoLegalComponent } from './templates/aviso-legal/aviso-legal.component';
+import { ContactoComponent } from './templates/contacto/contacto.component';
+import { PoliticaDeCookiesComponent } from './templates/politica-de-cookies/politica-de-cookies.component';
+import { PoliticaDePrivacidadComponent } from './templates/politica-de-privacidad/politica-de-privacidad.component';
+import { RouterModule} from '@angular/router';
+import { SignupComponent } from './templates/forms/signup/signup.component';
+import { FormsRoutingModule } from './templates/forms/forms-routing.module';
+import { SubscribeComponent } from './templates/subscribe/subscribe.component';
 import { HeaderComponent } from './sharedComponents/header/header.component';
 import { MainHomeComponent } from './templates/main-home/main-home.component';
 import { ArticulosPrincipalesComponent } from './templates/main-home/articulos-principales/articulos-principales.component';
@@ -16,6 +25,13 @@ import { CajaComentariosComponent } from './templates/pagina-article/caja-coment
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
+    AvisoLegalComponent,
+    ContactoComponent,
+    PoliticaDeCookiesComponent,
+    PoliticaDePrivacidadComponent,
+    SubscribeComponent
+    AppComponent,
     HeaderComponent,
     MainHomeComponent,
     ArticulosPrincipalesComponent,
@@ -27,6 +43,8 @@ import { CajaComentariosComponent } from './templates/pagina-article/caja-coment
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    FormsRoutingModule
     AppRoutingModule,
     HttpClientModule
   ],
