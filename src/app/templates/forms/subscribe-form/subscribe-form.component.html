@@ -1,0 +1,63 @@
+<div class="semi-modal flex">
+    <section>
+        <h2>Suscripción</h2>
+        <hr>
+
+        <h3>Tipo de suscripción elegida</h3>
+        <p>Mensual (por ejemplo)</p>
+
+        <h3>Datos personales</h3>
+
+        <form id="subscription-form" class="flex" method="post" action="//TODO">
+
+            <fieldset>
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" placeholder="escribe aquí tu nombre..." required>
+            </fieldset>
+            <fieldset>
+                <label for="lastname">Apellidos</label>
+                <input type="text" id="lastname" name="lastname" placeholder="escribe aquí tu apellido..."
+                    required>
+            </fieldset>
+
+            <fieldset>
+                <label for="country">País</label>
+                <select id="country" name="country">
+                    <option value="">Elige una opción</option>
+                    <option value="opt1">opt1</option>
+                    <option value="opt2">op2</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="province">Provincia</label>
+                <select id="province" name="province">
+                    <option value="">Elige una opción</option>
+                    <option value="opt1">opt1</option>
+                    <option value="opt2">op2</option>
+                </select>
+            </fieldset>
+
+            <h3>Pago</h3>
+
+            <div class="flex">
+
+                <label class="flex" for="credit-card">
+                    <img src="../icons/credit-card.png" alt="credit card">
+                    <figcaption>Tarjeta de crédito</figcaption>
+                    <input type="radio" name="pay-method" id="credit-card">
+                </label>
+
+                <label class="flex" for="paypal">
+                    <img src="../icons/paypal.png" alt="paypal">
+                    <figcaption>PayPal</figcaption>
+                    <input type="radio" name="pay-method" id="paypal">
+                </label>
+
+            </div>
+        </form>
+
+        <button type="submit" form="subscription-form">PAGAR</button>
+
+    </section>
+
+</div>

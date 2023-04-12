@@ -1,0 +1,54 @@
+.semi-modal h3 {
+    color: var(--azul_oscuro);
+    font-size: 1.8rem;
+
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.semi-modal p {
+    color: var(--gris_oscuro);
+    font-size: 1.4rem;
+
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: .5rem;
+}
+
+/* pago */
+
+.semi-modal div {
+    display: flex;
+    height: 18rem;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+.semi-modal div label {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.semi-modal div label figcaption {
+    font-size: 1rem;
+    width: fit-content;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.semi-modal div label img {
+    width: 8rem;
+}
+
+.semi-modal div label input[type="radio"] {
+    scale: 1.5;
+}
+
+.semi-modal div label::after {
+    content: none;
+}
