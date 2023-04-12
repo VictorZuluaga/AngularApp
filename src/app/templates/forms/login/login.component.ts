@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   constructor() { }
 
-  email: String = ""
-  password: String = ""
-  showError: Boolean = false
+  email: string = ""
+  password: string = ""
+  showError: boolean = false
 
   btnHandler: () => void = () => console.log(`email: ${this.email}, password: ${this.password}`, event?.target)
 }
