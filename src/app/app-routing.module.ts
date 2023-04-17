@@ -18,8 +18,12 @@ const routes: Routes = [
   },
   {
     path: 'subscribe', component: SubscribeComponent
+  },
+  {
+    path: 'test', loadChildren: () => import('./tests/tests.module').then(m => m.TestsModule)
   }
 ];
+
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
