@@ -5,6 +5,7 @@ import { FormsRoutingModule } from './forms-routing.module';
 import { FormsModule } from '@angular/forms'
 import { SignupComponent } from './signup/signup.component';
 import { SubscribeFormComponent } from './subscribe-form/subscribe-form.component';
+import { FormsValidationService } from './services/forms-validation.service';
 
 
 
@@ -14,6 +15,9 @@ import { SubscribeFormComponent } from './subscribe-form/subscribe-form.componen
     CommonModule,
     FormsRoutingModule,
     FormsModule
+  ],
+  providers: [
+    FormsValidationService
   ]
 })
 export class CFormsModule { }
