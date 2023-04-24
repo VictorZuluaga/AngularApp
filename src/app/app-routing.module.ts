@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SubscribeComponent } from './templates/subscribe/subscribe.component';
 import { MainHomeComponent } from './templates/main-home/main-home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,12 @@ const routes: Routes = [
   },
   {
     path: 'subscribe', component: SubscribeComponent
+  },
+  {
+    path: 'tests', loadChildren: () => import('./tests/tests.module').then(m => m.TestsModule)
+  },
+  {
+    path: '**', component: NotFoundComponent
   }
 ];
 

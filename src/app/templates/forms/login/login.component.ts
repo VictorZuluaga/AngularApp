@@ -18,7 +18,5 @@ export class LoginComponent implements OnInit {
   password: string = ""
   showError: boolean = false
 
-
-
   btnHandler: () => void = () => console.log(`email: ${this.email}, password: ${this.password}`, event?.target)
 }

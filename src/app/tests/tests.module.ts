@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TestComponent } from './test/test.component';
 import { TestsRoutingModule } from './tests-routing.module';
 import { CalledComponent } from './called/called.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,7 @@ import { CalledComponent } from './called/called.component';
     CalledComponent
   ],
   imports: [
-    CommonModule, TestsRoutingModule
+    CommonModule, TestsRoutingModule, FormsModule
   ]
 })
 export class TestsModule { }

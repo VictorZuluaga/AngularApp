@@ -16,6 +16,7 @@ import { PaginaArticleComponent } from './templates/pagina-article/pagina-articl
 import { ArticleComponent } from './templates/pagina-article/article/article.component';
 import { CajaComentariosComponent } from './templates/pagina-article/caja-comentarios/caja-comentarios.component';
 import { PolicyModule } from './templates/policy/policy.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PolicyModule } from './templates/policy/policy.module';
     ListaVideosComponent,
     PaginaArticleComponent,
     ArticleComponent,
-    CajaComentariosComponent
+    CajaComentariosComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
