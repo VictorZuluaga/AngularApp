@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+import { FormsValidationService } from '../services/forms-validation.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: [ '../forms.css', './login.component.css' ]
+  styleUrls: [ '../forms.css', './login.component.css' ],
+  providers: [ FormsValidationService ]
 })
 export class LoginComponent implements OnInit {
   constructor(private Route: ActivatedRoute) { }
