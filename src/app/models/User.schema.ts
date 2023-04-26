@@ -5,7 +5,7 @@ export class User {
     public set subscription(value: boolean) {
         this._subscription = value;
     }
-    
+
     public get password(): string {
         return this._password;
     }

@@ -15,6 +15,6 @@ export class SignupComponent {
   repeat_password: String = ""
   showError: Boolean = false
 
-  emailHandler: (any) => void = (e) =>
-    btnHandler: () => void = () => console.log(`email: ${this.email}, password: ${this.password} password-repeat: ${this.repeat_password}`, event?.target)
+  emailHandler: (algo: any) => void = (e) => { }
+  btnHandler: () => void = () => console.log(`email: ${this.email}, password: ${this.password} password-repeat: ${this.repeat_password}`, event?.target)
 }

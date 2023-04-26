@@ -29,6 +29,8 @@ const routes: Routes = [
   },
   {
     path: '**', component: NotFoundComponent
+  },
+  {
     path: 'test', loadChildren: () => import('./tests/tests.module').then(m => m.TestsModule)
   }
 ];
