@@ -2,11 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SubscribeComponent } from './templates/subscribe/subscribe.component';
 import { MainHomeComponent } from './templates/main-home/main-home.component';
+import { PaginaArticleComponent } from './templates/pagina-article/pagina-article.component';
 
 
 const routes: Routes = [
   {
     path: '', component: MainHomeComponent
+  },
+  {
+    path: 'article', component: PaginaArticleComponent
   },
   {
     path: 'auth',
