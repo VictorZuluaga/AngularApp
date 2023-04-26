@@ -12,7 +12,14 @@ export class LoginComponent {
 
   email: string = ""
   password: string = ""
-  showError: boolean = false
+  errorMsg: string = ""
 
-  btnHandler: () => void = () => console.log(`email: ${this.email}, password: ${this.password}`, event?.target)
+  btnHandler: () => void = () => {
+    this.errorMsg = ""  
+    const email: any = document.querySelector("#email");
+    if(email.reportValidity() === false) return;
+    const password: any = document.querySelector("#password");
+    if(password.reportValidity() === false) return;
+    // TODO: llamada a firebase
+  }
 }

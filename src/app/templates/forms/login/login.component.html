@@ -8,9 +8,6 @@
                 <label for="email">email</label>
                 <input [(ngModel)]="email" type="email" id="email" name="email" placeholder="escribe aquí tu email..."
                     required>
-                <div *ngIf="email && !validatorService.isEmail(email)" class="error-msg">
-                    <p>No has introducido un email correcto</p>
-                </div>
             </fieldset>
             <fieldset class="flex">
                 <label for="password">contraseña</label>
@@ -23,7 +20,7 @@
             <a href="/auth/signup">¿no estás registrado?</a>
         </div>
 
-        <p *ngIf="showError" class="error-msg">El email no existe</p>
+        <p class="error-msg">{{errorMsg}}</p>
 
         <button (click)="btnHandler()" type="submit" form="login-form">Log In</button>
 

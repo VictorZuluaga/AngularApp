@@ -6,10 +6,7 @@
 
             <fieldset class="flex">
                 <label for="email">email</label>
-                <input [(ngModel)]="email" type="email" id="email" name="email" placeholder="escribe aquí tu email..." required>
-                <div *ngIf="email && !validatorService.isEmail(email)" class="error-msg">
-                    <p>No has introducido un email correcto</p>
-                </div>
+                <input [(ngModel)]="email" type="email" id="email" name="email" placeholder="escribe aquí tu email..." required>                
             </fieldset>            
             <fieldset>
                 <label for="password">contraseña</label>
@@ -19,12 +16,11 @@
             <fieldset>
                 <label for="repeat-password">repetir contraseña</label>
                 <input [(ngModel)]="repeat_password" type="password" id="repeat-password" name="repeat-password"
-                    placeholder="repite aquí tu contraseña..." required> 
-                <div *ngIf="password && repeat_password && (password !== repeat_password)" class="error-msg">
-                    <p>Las contraseñas no coinciden.</p>
-                </div>               
+                    placeholder="repite aquí tu contraseña..." required>                 
             </fieldset>
         </form>
+
+        <p class="error-msg">{{errorMsg}}</p>
 
         <button (click)="btnHandler()" type="submit" form="signup-form">Sign up</button>
     </section>

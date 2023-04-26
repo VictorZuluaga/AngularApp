@@ -22,18 +22,23 @@
 
             <fieldset>
                 <label for="country">País</label>
-                <select id="country" name="country">
-                    <option value="">Elige una opción</option>
-                    <option value="opt1">opt1</option>
-                    <option value="opt2">op2</option>
+                <select id="country" name="country" required>
+                    <option disabled selected value>Elige una opción</option>
+                    <option value="opt1">España</option>
+                    <option value="opt2">Francia</option>
+                    <option value="opt3">Italia</option>
+                    <option value="opt4">Reino Unido</option>
+                    <option value="opt5">Estados Unidos</option>
                 </select>
             </fieldset>
             <fieldset>
                 <label for="province">Provincia</label>
-                <select id="province" name="province">
-                    <option value="">Elige una opción</option>
-                    <option value="opt1">opt1</option>
-                    <option value="opt2">op2</option>
+                <select id="province" name="province" required>
+                    <option value="optDefault">Elige una opción</option>
+                    <option value="opt1">Las Palmas</option>
+                    <option value="opt2">Tenerife</option>
+                    <option value="opt3">Madrid</option>
+                    <option value="opt4">Barcelona</option>
                 </select>
             </fieldset>
 
@@ -56,7 +61,7 @@
             </div>
         </form>
 
-        <button type="submit" form="subscription-form">PAGAR</button>
+        <button (click)="pagarHandler()" type="submit" form="subscription-form">PAGAR</button>
 
     </section>
 
