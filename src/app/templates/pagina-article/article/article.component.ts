@@ -32,6 +32,8 @@ export class ArticleComponent implements OnInit{
     this.pie_foto = (await article).getPieFoto();
     this.fecha = (await article).getFecha();
     this.contenido = (await article).getContenido();
+
+    
   }
 
 }
