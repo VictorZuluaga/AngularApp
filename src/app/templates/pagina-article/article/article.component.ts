@@ -18,10 +18,11 @@ export class ArticleComponent implements OnInit{
   protected contenido!: string;
 
   constructor(){
-    this.initialize();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initialize();
+  }
 
   private async initialize(){
     const article = new FirebaseArticleService().loadData();
