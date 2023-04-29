@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,EventEmitter,OnInit, Output } from '@angular/core';
 import FirebaseArticleService from 'src/app/FirebaseServices/firebase-articles.service';
 import { CajaComentariosComponent } from '../caja-comentarios/caja-comentarios.component';
 import { CommaExpr } from '@angular/compiler';
@@ -30,6 +30,9 @@ export class ArticleComponent implements OnInit{
   protected contenido_articulo_relacionado2!:string;
   protected contenido_articulo_relacionado3!:string;
 
+  @Output()
+  loadComentarios: EventEmitter<any[]> = new EventEmitter<any[]>();
+
   constructor(){
   }
 
@@ -54,7 +57,7 @@ export class ArticleComponent implements OnInit{
     this.contenido_articulo_relacionado2 = (await article).getContenidoArticuloRelacionado2();
     this.contenido_articulo_relacionado3 = (await article).getContenidoArticuloRelacionado3();
     const commentBox = (await article).getCommentBox();
-    //CajaComentariosComponent.getComentarios(commentBox);
+    this.loadComentarios.emit(commentBox);
   }
 
 }
