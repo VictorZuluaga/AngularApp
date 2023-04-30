@@ -1,7 +1,6 @@
 import { Component,EventEmitter,OnInit, Output } from '@angular/core';
 import FirebaseArticleService from 'src/app/FirebaseServices/firebase-articles.service';
-import { CajaComentariosComponent } from '../caja-comentarios/caja-comentarios.component';
-import { CommaExpr } from '@angular/compiler';
+
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -33,7 +32,7 @@ export class ArticleComponent implements OnInit{
   @Output()
   loadComentarios: EventEmitter<any[]> = new EventEmitter<any[]>();
 
-  constructor(){
+  constructor(private firebaseArticleService: FirebaseArticleService){
   }
 
   ngOnInit(): void {
@@ -41,7 +40,7 @@ export class ArticleComponent implements OnInit{
   }
 
   private async initialize_main_article(){
-    const article = new FirebaseArticleService().loadData_article();
+    const article = this.firebaseArticleService.loadData_article();
     this.titulo = (await article).getTitulo();
     this.entrada = (await article).getEntrada();
     this.imagen = (await article).getImagen();

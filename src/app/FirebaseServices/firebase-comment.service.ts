@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import db from "./firebase-users-service.config";
-import { DocumentReference, addDoc, collection, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore/lite'
+import db from "./firebase.service.config";
+import {collection, doc, getDoc, updateDoc } from 'firebase/firestore/lite'
 
 @Injectable({
     providedIn: 'root'

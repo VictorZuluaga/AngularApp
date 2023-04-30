@@ -1,7 +1,13 @@
-import db from "./firebase-users-service.config";
+import db from "./firebase.service.config";
 import { Article } from "../models/Articles/Article.schema";
 import { Articles } from "../models/Articles/Articles.model";
-import { DocumentReference, addDoc, collection, doc, getDoc, getDocs, setDoc } from 'firebase/firestore/lite'
+import { collection, doc, getDoc} from 'firebase/firestore/lite'
+import { Injectable } from "@angular/core";
+
+
+@Injectable({
+    providedIn: 'root'
+})
 
 export default class FirebaseArticleService implements Articles {
 
@@ -60,6 +66,5 @@ export default class FirebaseArticleService implements Articles {
                             contenido_articulo_relacionado3, comentarios);
 
     }
-
 
 }
