@@ -4,42 +4,16 @@
     <hr class="bottom">
 </div>
 
-<div class="cuatro-articulos">
-    <div>
-        <img class="imagen" src="">
+<div class="cuatro-articulos" >
+    
+    <div *ngFor="let articulo of articulos">
+        <img class="imagen" src={{articulo.imagen}}>
         <a href="#">
-            <h4 class="titulo"></h4>
+            <h4 class="titulo">{{articulo.titulo}}</h4>
         </a>
         <a href="#">
-            <p class="datos"></p>
-        </a>
-    </div>
-    <div>
-        <img class="imagen" src="">
-        <a href="#">
-            <h4 class="titulo"></h4>
-        </a>
-        <a href="#">
-            <p class="datos"></p>
+            <p class="datos">{{articulo.datos}}</p>
         </a>
     </div>
-    <div>
-        <img class="imagen" src="">
-        <a href="#">
-            <h4 class="titulo"></h4>
-        </a>
-        <a href="#">
-            <p class="datos"></p>
-        </a>
-    </div>
-    <div>
-        <img class="imagen" src="">
-        <a href="#">
-            <h4 class="titulo"></h4>
-        </a>
-        <a href="#">
-            <p class="datos"></p>
-        </a>
-    </div>
-
+    
 </div>

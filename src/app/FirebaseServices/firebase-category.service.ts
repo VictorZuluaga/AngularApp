@@ -42,7 +42,7 @@ export default class FirebaseCategoryService{
         } else {
             console.log('El documento no existe.');
         }
-        return (secondary_article);
+        return secondary_article;
 
     }
 

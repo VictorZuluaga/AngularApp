@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import FirebaseCategoryService from 'src/app/FirebaseServices/firebase-category.service';
 
 @Component({
@@ -6,9 +6,10 @@ import FirebaseCategoryService from 'src/app/FirebaseServices/firebase-category.
   templateUrl: './articulos-principales.component.html',
   styleUrls: ['./articulos-principales.component.css','../main-home.component.css']
 })
+
 export class ArticulosPrincipalesComponent implements OnInit {
 
-  public articulos: any[] = [];
+  articulos: any[] = [];
 
   constructor(private firebaseCategoryService:FirebaseCategoryService){};
   
