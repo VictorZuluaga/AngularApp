@@ -14,6 +14,7 @@ import { CajaComentariosComponent } from './templates/pagina-article/caja-coment
 import { PolicyModule } from './templates/policy/policy.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MainHomeModule } from './templates/main-home/main-home.module';
+import {PaginaArticleModule} from './templates/pagina-article/pagina-article.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MainHomeModule } from './templates/main-home/main-home.module';
     AppRoutingModule,
     HttpClientModule,
     PolicyModule,
-    MainHomeModule
+    MainHomeModule,
+    PaginaArticleModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

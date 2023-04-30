@@ -13,6 +13,6 @@
       
 
     <div class="publicar-comentario">
-        <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario"></textarea>
-        <button type="submit">Enviar</button>
+        <textarea [(ngModel)] = "nuevo_mensaje" id="comentario" name="comentario" placeholder="Escribe tu comentario"></textarea>
+        <button type="submit" (click) = "publicarComentario()">Enviar</button>
     </div>
