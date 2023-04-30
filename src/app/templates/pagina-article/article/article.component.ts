@@ -18,16 +18,12 @@ export class ArticleComponent implements OnInit{
   protected contenido!: string;
 
   //articulos mas vistos
-  protected titulo_mas_vistos!: string;
-  protected contenido1_most_viewed!:string;
-  protected contenido2_most_viewed!:string;
-  protected contenido3_most_viewed!:string;
+  protected titulo_mas_vistos:string = "Artículos más vistos";
+  protected articulos_mas_vistos: string[] = [];
 
   //articulos relacionados
-  protected titulo_articulo_relacionado!:string;
-  protected contenido_articulo_relacionado1!:string;
-  protected contenido_articulo_relacionado2!:string;
-  protected contenido_articulo_relacionado3!:string;
+  protected titulo_relacionados:string = "Artículos relacionados";
+  protected articulos_relacionados: string[] = [];
 
   @Output()
   loadComentarios: EventEmitter<any[]> = new EventEmitter<any[]>();
@@ -37,26 +33,28 @@ export class ArticleComponent implements OnInit{
 
   ngOnInit(): void {
     this.initialize_main_article();
+    this.initialize_most_viewed_articles();
+    this.initialize_related_articles();
   }
 
   private async initialize_main_article(){
-    const article = this.firebaseArticleService.loadData_article();
-    this.titulo = (await article).getTitulo();
-    this.entrada = (await article).getEntrada();
-    this.imagen = (await article).getImagen();
-    this.pie_foto = (await article).getPieFoto();
-    this.fecha = (await article).getFecha();
-    this.contenido = (await article).getContenido();
-    this.titulo_mas_vistos = (await article).getTituloMasVistos();
-    this.contenido1_most_viewed = (await article).getContenido1MostViewed();
-    this.contenido2_most_viewed = (await article).getContenido2MostViewed();
-    this.contenido3_most_viewed = (await article).getContenido3MostViewed();
-    this.titulo_articulo_relacionado = (await article).getTituloArticuloRelacionado();
-    this.contenido_articulo_relacionado1 = (await article).getContenidoArticuloRelacionado1();
-    this.contenido_articulo_relacionado2 = (await article).getContenidoArticuloRelacionado2();
-    this.contenido_articulo_relacionado3 = (await article).getContenidoArticuloRelacionado3();
-    const commentBox = (await article).getCommentBox();
-    this.loadComentarios.emit(commentBox);
+    const jsonArticle = JSON.parse(await this.firebaseArticleService.loadData_article());
+    this.titulo = jsonArticle.titulo;
+    this.contenido = jsonArticle.contenido;
+    this.entrada = jsonArticle.entrada;
+    this.imagen = jsonArticle.imagen;
+    this.pie_foto = jsonArticle.pie_foto;
+    this.datos = jsonArticle.datos;
+    this.fecha = jsonArticle.fecha;
+    this.loadComentarios.emit(jsonArticle.comentarios);
+  }
+
+  private async initialize_most_viewed_articles(){
+    this.articulos_mas_vistos = await this.firebaseArticleService.loadData_Most_Viewed();
+  }
+
+  private async initialize_related_articles(){
+    this.articulos_relacionados = await this.firebaseArticleService.loadData_Related_Articles();
   }
 
 }

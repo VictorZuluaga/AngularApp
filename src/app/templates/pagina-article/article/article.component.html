@@ -14,30 +14,16 @@
     <div class="articulo-segunda-parte">
         <h3>{{titulo_mas_vistos}}</h3>
         <hr class="bottom">
-        <div class="contenido-mas-vistos">
-            <ol>
-                <a href="#">
-                    <li>{{contenido1_most_viewed}}</li>
-                </a>
-                <a href="#">
-                    <li>{{contenido2_most_viewed}}</li>
-                </a>
-                <a href="#">
-                    <li>{{contenido3_most_viewed}}</li>
-                </a>
-            </ol>
-        </div>
-        <h3>{{titulo_articulo_relacionado}}</h3>
+        <ol *ngFor="let articulo_mas_visto of articulos_mas_vistos; let i = index">
+            <a href="#">
+                <li>{{ i + 1 }}. {{ articulo_mas_visto }}</li>
+            </a>
+        </ol>
+        <h3>{{titulo_relacionados}}</h3>
         <hr class="bottom">
-        <ol>
+        <ol *ngFor="let articulo_relacionado of articulos_relacionados; let i = index">
             <a href="#">
-                <li>{{contenido_articulo_relacionado1}}</li>
-            </a>
-            <a href="#">
-                <li>{{contenido_articulo_relacionado2}}</li>
-            </a>
-            <a href="#">
-                <li>{{contenido_articulo_relacionado3}}</li>
+                <li>{{ i + 1 }}. {{articulo_relacionado}}</li>
             </a>
         </ol>
     </div>

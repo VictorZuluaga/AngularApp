@@ -1,6 +1,4 @@
 import db from "./firebase.service.config";
-import { Article } from "../models/Articles/Article.schema";
-import { Articles } from "../models/Articles/Articles.model";
 import { collection, doc, getDoc} from 'firebase/firestore/lite'
 import { Injectable } from "@angular/core";
 
@@ -9,62 +7,56 @@ import { Injectable } from "@angular/core";
     providedIn: 'root'
 })
 
-export default class FirebaseArticleService implements Articles {
+export default class FirebaseArticleService{
 
-
-    async loadData_article(): Promise<Article> {
+    async loadData_article(): Promise<string> {
 
         //Accedo a la base de datos
-        const article_main_article = doc(collection(db, 'Articles'), 'article');
-        const article_most_viewed = doc(collection(db, 'Articles'), 'articulos_mas_vistos');
-        const article_related_articles = doc(collection(db, 'Articles'), 'articulos_relacionados');
-
-        const articleSnapshot_main_article = await getDoc(article_main_article);
-        const articleSnapshot_most_viewed = await getDoc(article_most_viewed);
-        const articleSnapshot_related_articles = await getDoc(article_related_articles);
+        const article = doc(collection(db, 'Articles'), 'article');
+        const articleSnapshot = await getDoc(article);
 
         //Compruebo su existencia
-        if (articleSnapshot_main_article.exists() && articleSnapshot_most_viewed.exists()
-        && articleSnapshot_related_articles.exists()) {
+        if (articleSnapshot.exists()) {
             console.log("El documento existe!");
         } else {
             console.log('El documento no existe.');
         }
 
-        //Carga de registros
-        const register_main_article = articleSnapshot_main_article.data();
-        const register_most_viewed = articleSnapshot_most_viewed.data();
-        const register_related_articles = articleSnapshot_related_articles.data();
+        return JSON.stringify(articleSnapshot.data());
+    }
 
-        //Carga de datos main article
-        const titulo = register_main_article!['titulo'];
-        const entrada = register_main_article!['entrada'];
-        const imagen = register_main_article!['imagen'];
-        const pie_foto = register_main_article!['pie_foto'];
-        const datos = register_main_article!['datos'];
-        const fecha = register_main_article!['fecha'];
-        const contenido = register_main_article!['contenido'];
+    async loadData_Most_Viewed(): Promise<string[]> {
 
-        //Carga de datos most viewed
-        const titulo_mas_vistos = register_most_viewed!['titulo_mas_vistos'];
-        const contenido1_most_viewed = register_most_viewed!['articulo1_mas_vistos'];
-        const contenido2_most_viewed = register_most_viewed!['articulo2_mas_vistos'];
-        const contenido3_most_viewed = register_most_viewed!['articulo3_mas_vistos'];
+        //Accedo a la base de datos
+        const most_viewed_Ref = doc(collection(db, 'Articles'), 'articulos_mas_vistos');
+        const most_viewedSnapshot = await getDoc(most_viewed_Ref);
 
-        //Carga de datos related articles
-        const titulo_articulo_relacionado = register_related_articles!['titulo_relacionados'];
-        const contenido_articulo_relacionado1 = register_related_articles!['articulo1_relacionados'];
-        const contenido_articulo_relacionado2 = register_related_articles!['articulo2_relacionados'];
-        const contenido_articulo_relacionado3 = register_related_articles!['articulo3_relacionados'];
+        //Compruebo su existencia
+        if (most_viewedSnapshot.exists()) {
+            console.log("El documento existe!");
+        } else {
+            console.log('El documento no existe.');
+        }
 
-        //Funcion para cargar los comentarios relacionados con este articulo
-        const comentarios = register_main_article!['comentarios'];
+        const most_viewed = most_viewedSnapshot.get('resumen_articulos_mas_vistos');
+        return most_viewed;
+    }
 
-        return new Article(titulo,entrada,imagen,pie_foto,datos,fecha,contenido,
-                            titulo_mas_vistos,contenido1_most_viewed,contenido2_most_viewed,contenido3_most_viewed,
-                            titulo_articulo_relacionado,contenido_articulo_relacionado1,contenido_articulo_relacionado2,
-                            contenido_articulo_relacionado3, comentarios);
+    async loadData_Related_Articles(): Promise<string[]> {
 
+        //Accedo a la base de datos
+        const related_articles_Ref = doc(collection(db, 'Articles'), 'articulos_relacionados');
+        const related_articlesSnapshot = await getDoc(related_articles_Ref);
+
+        //Compruebo su existencia
+        if (related_articlesSnapshot.exists()) {
+            console.log("El documento existe!");
+        } else {
+            console.log('El documento no existe.');
+        }
+
+        const related_articles = related_articlesSnapshot.get('resumen_articulos_relacionados');
+        return related_articles;
     }
 
 }
