@@ -26,6 +26,11 @@ export class SubscribeFormComponent {
     if(paisElement.reportValidity() === false) return;
     const provinciaElement: any = document.querySelector("#province");
     if(provinciaElement.reportValidity() === false) return;
+    const radioButtons: any = document.getElementsByName("pay-method");
+    radioButtons.forEach((radioButton: any) => {
+      if(radioButton.reportValidity() == false) return;
+    });
+    
     // TODO: llamada a firebase
   }
 }

@@ -34,7 +34,7 @@
             <fieldset>
                 <label for="province">Provincia</label>
                 <select id="province" name="province" required>
-                    <option value="optDefault">Elige una opción</option>
+                    <option disabled selected value>Elige una opción</option>
                     <option value="opt1">Las Palmas</option>
                     <option value="opt2">Tenerife</option>
                     <option value="opt3">Madrid</option>
@@ -49,13 +49,13 @@
                 <label class="flex" for="credit-card">
                     <img src="../../../../assets/icons/credit-card.png" alt="credit card">
                     <figcaption>Tarjeta de crédito</figcaption>
-                    <input type="radio" name="pay-method" id="credit-card">
+                    <input type="radio" name="pay-method" id="credit-card" required>
                 </label>
 
                 <label class="flex" for="paypal">
                     <img src="../../../../assets/icons/paypal.png" alt="paypal">
                     <figcaption>PayPal</figcaption>
-                    <input type="radio" name="pay-method" id="paypal">
+                    <input type="radio" name="pay-method" id="paypal" required>
                 </label>
 
             </div>
