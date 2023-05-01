@@ -1,22 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Users } from '../models/Users.model';
 import { User } from '../models/User.schema';
-import db from '../FirebaseServices/firebase-users-service.config'
-import { DocumentReference, addDoc, collection, doc, getDocs, setDoc } from 'firebase/firestore/lite'
+import { addDoc, collection, deleteDoc, doc, query, updateDoc, where } from 'firebase/firestore'
+import { FirestoreService } from './firestore.service';
+import { AsyncToolsService } from '../services/async-tools.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export default class FirebaseUserService implements Users {
+  private collection: string = "Users"
+  constructor(private fss: FirestoreService, private atools: AsyncToolsService) { }
 
-  constructor() {
 
+  create(user: User): Promise<User> {
+    return addDoc(collection(this.fss.db, this.collection), user).then(doc => this.atools.getSnapshotPromise(doc))
   }
-  findById(id: string): User {
-    throw new Error('Method not implemented.');
+
+
+  findById(id: string): Promise<User> {
+    return this.atools.getSnapshotPromise(doc(this.fss.db, this.collection, id))
   }
-  add(algo: User): Promise<DocumentReference> {
-    const user = new User("", "Pepe", "", "", "", "", "", false)
-    return addDoc(collection(db, "Users"), { ...user })
+  findByEmail(email: string): Promise<User> {
+    return this.atools.getSnapshotPromise(query(collection(this.fss.db, this.collection), where("email", "==", email)), true)
   }
+  update(id: string, data: {}): Promise<boolean> {
+    return updateDoc(doc(this.fss.db, this.collection, id), { ...data }).then(() => true).catch(() => false)
+  }
+  delete(id: string): Promise<boolean> {
+    return deleteDoc(doc(this.fss.db, this.collection, id)).then(() => true).catch(() => false)
+  }
+
 }
