@@ -51,13 +51,17 @@ export default class FirebaseUserService implements Users {
 
   delete(id: string,): Promise<boolean> | null {
     if (!id) return null
-    try { return deleteDoc(doc(this.fss.db, this.collection, id)).then(() => this.fss.auth.currentUser?.delete()).then(x => !!x).catch(() => false) }
+    try {
+      return deleteDoc(doc(this.fss.db, this.collection, id))
+        .then(() => this.fss.auth.currentUser?.delete())
+        .then(x => !!x).catch(() => false)
+    }
     catch { return null }
   }
 
   login(email: string, password: string): Promise<boolean> {
     return signInWithEmailAndPassword(this.fss.auth, email, password)
-      .then(us => this.findByEmail(us?.user?.email as string))//?.subscribe(x => this.updateLog(x)))
+      .then(us => this.findByEmail(us?.user?.email as string))
       .then(() => true)
       .catch(() => false)
   }
@@ -70,6 +74,8 @@ export default class FirebaseUserService implements Users {
   loggeduser(): Observable<User | null> {
     return this._loggedUser_
   }
+
+  // *=> aux
 
   updateLog(us: User | null): void {
     this.logObs!.next(us)
