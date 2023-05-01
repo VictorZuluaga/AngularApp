@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import env from '../../../../../env'
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { Firestore, getFirestore } from 'firebase/firestore';
+import { Auth, getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: env[ "API_KEY" ],
@@ -19,12 +20,14 @@ export class FirestoreService {
 
   private _app: FirebaseApp;
   private _db: Firestore;
+  private _auth: Auth;
 
   // *=> constructors
 
   constructor() {
     this._app = initializeApp(firebaseConfig)
     this._db = getFirestore(this.app)
+    this._auth = getAuth()
   }
 
   // *=> getters & setters
@@ -32,14 +35,13 @@ export class FirestoreService {
   public get app(): FirebaseApp {
     return this._app;
   }
-  public set app(value: FirebaseApp) {
-    this._app = value;
-  }
 
   public get db(): Firestore {
     return this._db;
   }
-  public set db(value: Firestore) {
-    this._db = value;
+
+  public get auth(): Auth {
+    return this._auth;
   }
+
 }

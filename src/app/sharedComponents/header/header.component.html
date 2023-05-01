@@ -19,8 +19,10 @@
 
     <ul class="other-links">
         <a href="subscribe">Subscribe</a>
-        <a href="login">Log In</a>
-        <a href="signup">Registrarse</a>
+        <a *ngIf="!(user |async)?.id" href="auth/login">Log In</a> <a *ngIf="(user |async)?.id">{{(user
+            |async)?.name}}</a>
+        <a *ngIf="!(user |async)?.id" href="signup">Registrarse</a> <a *ngIf="(user |async)?.id"
+            (click)="logout()">Logout</a>
     </ul>
 
     <div class="hamburger">

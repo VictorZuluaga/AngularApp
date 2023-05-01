@@ -1,14 +1,22 @@
-import { Component, Renderer2, AfterViewInit } from '@angular/core';
+import { Component, Renderer2, AfterViewInit, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/models/User.schema';
+import { UserServices } from 'src/app/services/dbServices/Users/user-services.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: [ './header.component.css' ]
 })
 
 export class HeaderComponent implements AfterViewInit {
 
-  constructor(private renderer2: Renderer2) { }
+  user: Observable<User | null>
+
+  constructor(private renderer2: Renderer2, private User: UserServices) {
+    this.user = this.User.loggeduser()
+  }
+
 
   ngAfterViewInit(): void {
 
@@ -25,5 +33,7 @@ export class HeaderComponent implements AfterViewInit {
       otherLinks!.classList.toggle("active");
     });
   }
+
+  logout: () => void = this.User.logout
 
 }
