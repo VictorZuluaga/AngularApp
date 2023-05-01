@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Users } from './Users.model';
 import { User } from '../../../models/User.schema';
 import { addDoc, collection, deleteDoc, doc, query, updateDoc, where, } from 'firebase/firestore'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, fetchSignInMethodsForEmail } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, fetchSignInMethodsForEmail, onAuthStateChanged } from 'firebase/auth'
 import { FirestoreService } from '../FirebaseServices/firestore.service';
 import { AsyncToolsService } from '../../async-tools.service';
 import { BehaviorSubject, Observable, Observer, filter, from, switchMap } from 'rxjs';
@@ -13,9 +13,14 @@ import { BehaviorSubject, Observable, Observer, filter, from, switchMap } from '
 export default class FirebaseUserService implements Users {
   private collection: string = "Users"
   private _loggedUser_!: Observable<User | null>
-  private logObs: BehaviorSubject<User | null>
+  private logObs: BehaviorSubject<User | null> | null = null
 
   constructor(private fss: FirestoreService, private atools: AsyncToolsService) {
+
+    onAuthStateChanged(this.fss.auth, user => {
+      user && this.findByEmail(user?.email as string)?.subscribe(x => this.logObs!.next(x))
+    })
+
     this.logObs = new BehaviorSubject<User | null>(null)
     this._loggedUser_ = this.logObs.asObservable()
   }
@@ -52,7 +57,7 @@ export default class FirebaseUserService implements Users {
 
   login(email: string, password: string): Promise<boolean> {
     return signInWithEmailAndPassword(this.fss.auth, email, password)
-      .then(us => this.findByEmail(us?.user?.email as string)?.subscribe(x => this.updateLog(x)))
+      .then(us => this.findByEmail(us?.user?.email as string))//?.subscribe(x => this.updateLog(x)))
       .then(() => true)
       .catch(() => false)
   }
@@ -67,6 +72,6 @@ export default class FirebaseUserService implements Users {
   }
 
   updateLog(us: User | null): void {
-    this.logObs.next(us)
+    this.logObs!.next(us)
   }
 }

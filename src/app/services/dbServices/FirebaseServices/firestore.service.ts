@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, LOCALE_ID } from '@angular/core';
 import env from '../../../../../env'
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { Firestore, getFirestore } from 'firebase/firestore';
-import { Auth, getAuth } from 'firebase/auth';
+import { Auth, browserSessionPersistence, getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: env[ "API_KEY" ],
@@ -28,6 +28,7 @@ export class FirestoreService {
     this._app = initializeApp(firebaseConfig)
     this._db = getFirestore(this.app)
     this._auth = getAuth()
+    this._auth.setPersistence(browserSessionPersistence)
   }
 
   // *=> getters & setters
