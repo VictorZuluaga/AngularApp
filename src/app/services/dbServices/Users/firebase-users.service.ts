@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Users } from '../models/Users.model';
-import { User } from '../models/User.schema';
+import { Users } from '../../../models/Users.model';
+import { User } from '../../../models/User.schema';
 import { addDoc, collection, deleteDoc, doc, onSnapshot, query, updateDoc, where, } from 'firebase/firestore'
-import { FirestoreService } from './firestore.service';
-import { AsyncToolsService } from '../services/async-tools.service';
+import { FirestoreService } from '../FirebaseServices/firestore.service';
+import { AsyncToolsService } from '../../async-tools.service';
 import { Observable, from, map, switchMap } from 'rxjs';
 
 @Injectable({

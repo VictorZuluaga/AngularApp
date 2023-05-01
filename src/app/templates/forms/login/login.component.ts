@@ -2,24 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormsValidationService } from '../services/forms-validation.service';
 import { User } from 'src/app/models/User.schema';
-import FirebaseUserService from 'src/app/FirebaseServices/firebase-users.service';
 import { Users } from 'src/app/models/Users.model';
 import { Observable } from 'rxjs';
+import { UserServices } from 'src/app/services/dbServices/Users/user-services.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: [ '../forms.css', './login.component.css' ],
-  providers: [ FormsValidationService, FirebaseUserService ]
+  providers: []
 })
 export class LoginComponent implements OnInit {
 
   public user: Observable<User> | undefined
-  private Users: Users
 
-  constructor(private Route: ActivatedRoute, Users: FirebaseUserService) {
-    this.Users = Users
-  }
+  constructor(private Route: ActivatedRoute, private Users: UserServices) { }
 
 
   ngOnInit(): void {
