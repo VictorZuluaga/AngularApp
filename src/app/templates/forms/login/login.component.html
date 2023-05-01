@@ -22,6 +22,7 @@
 
         <p *ngIf="showError" class="error-msg">El email no existe</p>
 
+        <p style="color: white; text-align: center;">Email: {{(user |async)?.id}}</p>
         <p style="color: white; text-align: center;">Email: {{(user |async)?.email}}</p>
         <p style="color: white; text-align: center;">Name: {{(user |async)?.name}}</p>
 

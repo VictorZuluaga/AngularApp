@@ -4,6 +4,7 @@ import { FormsValidationService } from '../services/forms-validation.service';
 import { User } from 'src/app/models/User.schema';
 import FirebaseUserService from 'src/app/FirebaseServices/firebase-users.service';
 import { Users } from 'src/app/models/Users.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { Users } from 'src/app/models/Users.model';
 })
 export class LoginComponent implements OnInit {
 
-  public user: Promise<User> | undefined
+  public user: Observable<User> | undefined
   private Users: Users
 
   constructor(private Route: ActivatedRoute, Users: FirebaseUserService) {
@@ -34,26 +35,33 @@ export class LoginComponent implements OnInit {
 
   createUser: () => void = () => {
     this.user = this.Users.create({ email: "admin@admin.com", password: "admin", name: "Nombre original" })
-    this.user.then(x => console.log(x.id))
+    this.user?.subscribe(x => console.log(x.id))
   }
 
   findById: () => void = async () => {
-    this.user = this.Users.findById((await this.user)?.id as string)
-    this.user.then(x => console.log(x.id))
+    this.user?.subscribe(u => {
+      this.user = this.Users.findById(u.id as string)
+      this.user?.subscribe(x => console.log(x.id))
+    })
   }
 
   findByEmail: () => void = async () => {
     this.user = this.Users.findByEmail("admin@admin.com")
-    this.user.then(x => console.log(x.id))
+    this.user?.subscribe(x => console.log(x.id))
   }
 
   update: () => void = async () => {
-    const newUser = Object.assign({}, await this.user)
-    newUser.name = "Nuevo nombre"
-    this.Users.update((await this.user)?.id as string, { ...newUser }).then(x => console.log(x))
+    this.user?.subscribe(u => {
+      const newUser = Object.assign({}, u)
+      newUser.name = "Nuevo nombre"
+      this.Users.update(u.id as string, { ...newUser }).then(x => console.log(x))
+    })
   }
 
   delete: () => void = async () => {
-    this.Users.delete((await this.user)?.id as string).then(x => console.log(x))
+    this.user?.subscribe(u => this.Users.delete(u.id as string)?.then(x => {
+      this.user = undefined;
+      console.log(x)
+    }))
   }
 }
