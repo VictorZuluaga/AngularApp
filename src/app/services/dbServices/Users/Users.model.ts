@@ -20,7 +20,7 @@ export interface Users {
 
     // *=> Auth
     login(email: string, password: string): Promise<boolean>
-    logout(): any
+    logout(): void
     loggeduser(): Observable<User | null>
 
 }

@@ -57,7 +57,7 @@ export default class FirebaseUserService implements Users {
       .catch(() => false)
   }
 
-  logout() {
+  logout(): void {
     this.fss.auth.signOut()
     this.updateLog(null)
   }

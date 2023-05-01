@@ -34,6 +34,6 @@ export class HeaderComponent implements AfterViewInit {
     });
   }
 
-  logout: () => void = this.User.logout
+  logout: () => void = () => this.User.logout()
 
 }
