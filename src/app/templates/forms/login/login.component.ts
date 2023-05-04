@@ -17,9 +17,18 @@ export class LoginComponent {
   btnHandler: () => void = () => {
     this.errorMsg = ""  
     const email: any = document.querySelector("#email");
-    if(email.reportValidity() === false) return;
-    const password: any = document.querySelector("#password");
-    if(password.reportValidity() === false) return;
+    if(!email.reportValidity()) return;
+    const password: any = document.querySelector("#password");    
+    if(this.password.length === 0){
+      password.setCustomValidity("Es necesario escribir una contraseña.")
+    }
+    else if(!this.validatorService.isValidPassword(this.password)){
+      password.setCustomValidity("La contraseña debe tener un mínimo de 6 caracteres.");      
+    } 
+    else{
+      password.setCustomValidity("");
+    }
+    if(!password.reportValidity()) return;
     // TODO: llamada a firebase
   }
 }

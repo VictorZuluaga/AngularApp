@@ -15,4 +15,9 @@ export class FormsValidationService {
   .test(email)
   }
 
+  isValidPassword: (password: string) => boolean = (password) =>
+  {
+    return password.length >= 6;
+  }
+
 }
