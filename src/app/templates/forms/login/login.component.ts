@@ -14,7 +14,7 @@ import { UserServices } from 'src/app/services/dbServices/Users/user-services.se
 })
 export class LoginComponent implements OnInit {
 
-  public user: Observable<User | null> | undefined | null
+  public user?: Observable<User | null> | null
 
   constructor(private Route: ActivatedRoute, private Users: UserServices) { }
 

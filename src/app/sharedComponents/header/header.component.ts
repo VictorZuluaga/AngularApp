@@ -11,7 +11,7 @@ import { UserServices } from 'src/app/services/dbServices/Users/user-services.se
 
 export class HeaderComponent implements AfterViewInit {
 
-  user: Observable<User | null>
+  protected user: Observable<User | null>
 
   constructor(private renderer2: Renderer2, private User: UserServices) {
     this.user = this.User.loggeduser()

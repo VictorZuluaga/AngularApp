@@ -77,7 +77,7 @@ export default class FirebaseUserService implements Users {
 
   // *=> aux
 
-  updateLog(us: User | null): void {
+  private updateLog(us: User | null): void {
     this.logObs!.next(us)
   }
 }
