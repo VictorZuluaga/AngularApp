@@ -21,11 +21,7 @@ export class FileUploadService {
     const metadata = {
       contentType: 'image/jpeg'
     };
-    const uploadTask = uploadBytesResumable(storageRef, fileUpload.file, metadata);
-    return getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-      console.log('File available at', downloadURL);
-      return downloadURL
-    })
+    return uploadBytesResumable(storageRef, fileUpload.file, metadata).then(uploadTask => getDownloadURL(uploadTask.ref)) as Promise<string>
   }
 
   async defaultImagesList(): Promise<any[]> {

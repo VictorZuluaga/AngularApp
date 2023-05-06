@@ -8,17 +8,14 @@ import { FileUploadService } from "../../FirebaseServices/file-upload.service";
   styleUrls: [ './upload-image.component.css' ],
 })
 export class UploadImageComponent {
-  protected ref?: Promise<string>;
+  protected imageRefP?: Promise<string>;
   constructor(private fileUploadService: FileUploadService) { }
 
   cargarImagenes(event: any) {
 
-    for (let index = 0; index < event.target.files.length; index++) {
-      const file = event.target.files[ index ];
-      const fileUpload = new FileUpload(file);
-      this.ref = this.fileUploadService.pushFileToStorage(fileUpload);
-    }
-
-    this.ref?.then(x => console.log(x))
+    const file = event.target.files[ 0 ];
+    const fileUpload = new FileUpload(file);
+    this.imageRefP = this.fileUploadService.pushFileToStorage(fileUpload);
   }
 }
+
