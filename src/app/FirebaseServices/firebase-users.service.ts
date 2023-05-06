@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Users } from '../models/Users.model';
 import { User } from '../models/User.schema';
-import db from './firebase.service.config'
+import {db} from './firebase.service.config'
 import { DocumentReference, addDoc, collection, doc, getDocs, setDoc } from 'firebase/firestore/lite'
 
 @Injectable({

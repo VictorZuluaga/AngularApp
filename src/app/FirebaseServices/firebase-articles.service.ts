@@ -1,4 +1,4 @@
-import db from "./firebase.service.config";
+import {db} from "./firebase.service.config";
 import { collection, doc, getDoc} from 'firebase/firestore/lite'
 import { Injectable } from "@angular/core";
 

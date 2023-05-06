@@ -1,7 +1,7 @@
 import env from '../../../env'
 import { initializeApp }  from "firebase/app";
 import { getFirestore } from 'firebase/firestore/lite';
-
+import { getStorage, ref } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: env[ "API_KEY" ],
@@ -14,4 +14,5 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default getFirestore(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
