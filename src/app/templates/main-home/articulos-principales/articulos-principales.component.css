@@ -20,14 +20,9 @@
     padding-left: 5%;
 }
 
-
-.articulos-principales .articulo-derecho,
-.articulos-principales .articulo-izquierdo {
-    width: 25%;
-}
-
+ 
 .articulos-principales .articulo-central {
-    width: 50%;
+    width: 33.3%;
 }
 
 .articulos-principales .articulo-derecho,

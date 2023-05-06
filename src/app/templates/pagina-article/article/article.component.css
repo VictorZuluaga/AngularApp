@@ -51,7 +51,7 @@
     font-size: medium;
     margin-bottom: 0.4rem;
     margin-top: 0.4rem;
-    list-style-type: decimal;
+    list-style-type: none;
     color: var(--negro);
     text-decoration: none !important;
 }

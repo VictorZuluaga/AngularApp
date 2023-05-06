@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { FormsValidationService } from '../services/forms-validation.service';
+
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['../forms.css', './signup.component.css'],
-  providers: [FormsValidationService]
+  styleUrls: [ '../forms.css', './signup.component.css' ],
+  providers: []
 })
-export class SignupComponent {  
-  constructor(protected validatorService: FormsValidationService) { }
-  
+export class SignupComponent {
+  constructor() { }
+
   email: string = ""
   password: string = ""
   repeat_password: string = ""  

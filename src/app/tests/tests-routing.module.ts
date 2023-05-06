@@ -5,8 +5,9 @@ import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {
-    path: "",
-    component: TestComponent
+    path: ":data",
+    component: TestComponent,
+    data: { data: "Dato mediante enrutado" }
   }
 ];
 

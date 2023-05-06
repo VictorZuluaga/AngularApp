@@ -1,3 +1,3 @@
-<app-article></app-article>
+<app-article (loadComentarios)="comentarios = $event"></app-article>
 <hr class="bottom">
-<app-caja-comentarios></app-caja-comentarios>
+<app-caja-comentarios [comentarios]="comentarios"></app-caja-comentarios>

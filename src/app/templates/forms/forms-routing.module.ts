@@ -7,7 +7,7 @@ import { SubscribeFormComponent } from './subscribe-form/subscribe-form.componen
 const routes: Routes = [
   {
     path: "login",
-    component: LoginComponent
+    component: LoginComponent, data: { id: "Todo va bien" }
   },
   {
     path: "signup",

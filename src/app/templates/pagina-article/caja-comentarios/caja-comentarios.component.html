@@ -1,26 +1,18 @@
 <div class="caja-comentarios">
     <h2>COMENTARIOS</h2>
-    <div class="comentarios-publicados">
-        <div class="usuario">
-            <img src="" alt="">
-            <p id="nombre"></p>
-        </div>
-        <div class="contenido">
-            <p></p>
-        </div>
-    </div>
 
-    <div class="comentarios-publicados">
+    <div *ngFor="let comentario of comentarios" class="comentarios-publicados">
         <div class="usuario">
-            <img src="" alt="">
-            <p id="nombre"></p>
+          <img src="{{ comentario.imagen }}">
+          <p id="nombre">{{ comentario.nombre }}</p>
         </div>
         <div class="contenido">
-            <p></p>
+          <p>{{ comentario.contenido }}</p>
         </div>
     </div>
+      
 
     <div class="publicar-comentario">
-        <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario"></textarea>
-        <button type="submit">Enviar</button>
+        <textarea [(ngModel)] = "nuevo_mensaje" id="comentario" name="comentario" placeholder="Escribe tu comentario"></textarea>
+        <button type="submit" (click) = "publicarComentario()">Enviar</button>
     </div>

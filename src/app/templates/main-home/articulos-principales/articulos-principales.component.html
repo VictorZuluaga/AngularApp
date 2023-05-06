@@ -1,47 +1,17 @@
 <div class="articulos-principales">
-    <div class="articulo-izquierdo">
-        <img class="imagenes" src="">
-
+    <div class="articulo-central" *ngFor="let articulo of articulos">
+        <img class="imagenes" src="{{articulo.imagen}}">
         <div class="contenido">
             <a href="article">
-                <h2 class="titulo"></h2>
+                <h2 class="titulo">{{articulo.titulo}}</h2>
             </a>
 
             <a href="#">
-                <p class="datos"></p>
+                <p class="datos">{{articulo.datos}}</p>
             </a>
 
-            <p class="resumen"></p>
+            <p class="resumen">{{articulo.resumen}}</p>
         </div>
     </div>
-    <div class="articulo-central">
-        <img class="imagenes" src="">
-
-        <div class="contenido">
-            <a href="article">
-                <h2 class="titulo"></h2>
-            </a>
-
-            <a href="#">
-                <p class="datos"></p>
-            </a>
-
-            <p class="resumen"></p>
-        </div>
-    </div>
-    <div class="articulo-derecho">
-        <img class="imagenes" src="">
-
-        <div class="contenido">
-            <a href="article">
-                <h2 class="titulo"></h2>
-            </a>
-
-            <a href="#">
-                <p class="datos"></p>
-            </a>
-
-            <p class="resumen"></p>
-        </div>
-    </div>
+    
 </div>
