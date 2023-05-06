@@ -4,16 +4,16 @@
     <hr class="bottom">
 </div>
 
-<div class="cuatro-articulos" >
-    
+<div class="cuatro-articulos">
+
     <div *ngFor="let articulo of articulos">
         <img class="imagen" src={{articulo.imagen}}>
-        <a href="#">
+        <a href="{{articulo.href}}">
             <h4 class="titulo">{{articulo.titulo}}</h4>
         </a>
-        <a href="#">
+        <a href="{{articulo.href}}">
             <p class="datos">{{articulo.datos}}</p>
         </a>
     </div>
-    
+
 </div>
