@@ -13,13 +13,14 @@
     top: 0;
 }
 
-.header .nav-links ,
-.header .other-links{
+.header .nav-links,
+.header .other-links {
     list-style: none;
     text-decoration: none;
 }
+
 .header .nav-links a,
-.header .other-links a{
+.header .other-links a {
     text-decoration: none;
     display: inline-block;
     margin-right: 1rem;
@@ -62,6 +63,12 @@
 .logged-img {
     width: 1.8rem;
     margin-right: .5rem
+}
+
+
+.user-img {
+    width: 2rem;
+    border-radius: 40%;
 }
 
 

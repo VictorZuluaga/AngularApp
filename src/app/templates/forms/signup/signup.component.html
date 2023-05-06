@@ -20,7 +20,7 @@
                     placeholder="repite aquí tu contraseña..." required>
             </fieldset>
 
-            <app-upload-image></app-upload-image>
+            <app-upload-image (imageSelected)="imageSelected($event)"></app-upload-image>
         </form>
 
         <p class="error-msg">{{errorMsg}}</p>

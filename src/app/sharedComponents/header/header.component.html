@@ -19,8 +19,9 @@
 
     <ul class="other-links">
         <a href="auth/subscribe">Subscribe</a>
-        <a *ngIf="!(user |async)?.id" href="auth/login">Log In</a> <a *ngIf="(user |async)?.id">{{(user
-            |async)?.name}}</a>
+        <a *ngIf="!(user |async)?.id" href="auth/login">Log In</a>
+        <a *ngIf="(user |async)?.id"><img class="user-img" src="{{(user|async)?.image}}" alt="">
+            {{(user|async)?.name || "User"}}</a>
         <a *ngIf="!(user |async)?.id" href="auth/signup">Registrarse</a> <a *ngIf="(user |async)?.id"
             (click)="logout()">Logout</a>
     </ul>

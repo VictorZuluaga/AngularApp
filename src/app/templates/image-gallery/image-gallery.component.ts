@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FileUploadService } from '../../FirebaseServices/file-upload.service';
 
 @Component({
@@ -11,6 +11,11 @@ export class ImageGalleryComponent implements OnInit, OnChanges {
   @Input()
   imageRefP?: Promise<string>
 
+  @Output()
+  imageSelected: EventEmitter<string> = new EventEmitter<string>()
+
+  selectedImage: number = -1;
+
   images: any[] | null = null; // Inicializa la propiedad como null en lugar de una promesa vacía
 
   constructor(private fileUploadService: FileUploadService) {
@@ -21,7 +26,7 @@ export class ImageGalleryComponent implements OnInit, OnChanges {
     this.imageRefP?.then(ref => this.images?.push(ref))
   }
 
-  selectedImage = -1;
+
 
   selectImage(index: number) {
     if (this.selectedImage === index) {
@@ -29,6 +34,7 @@ export class ImageGalleryComponent implements OnInit, OnChanges {
     } else {
       this.selectedImage = index;
     }
+    this.imageSelected.emit(this.images?.[ this.selectedImage ])
   }
 
 

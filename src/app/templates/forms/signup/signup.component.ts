@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsValidationService } from '../services/forms-validation.service';
+import { UserServices } from 'src/app/services/dbServices/Users/user-services.service';
 
 
 @Component({
@@ -9,12 +10,15 @@ import { FormsValidationService } from '../services/forms-validation.service';
   providers: []
 })
 export class SignupComponent {
-  constructor(private validatorService: FormsValidationService) { }
+
+  constructor(private validatorService: FormsValidationService, private Users: UserServices) { }
 
   email: string = ""
   password: string = ""
   repeat_password: string = ""
   errorMsg: string = ""
+
+  image?: string
 
   btnHandler: () => void = () => {
     this.errorMsg = ""
@@ -38,7 +42,13 @@ export class SignupComponent {
     }
     // TODO: llamada a Firebase
     console.log("Todo ok, llamada a firebase");
+    console.log(this.image)
+    this.Users.create({ email: this.email, password: this.password, image: this.image })?.
+      subscribe(us => this.Users.login(us.email, us.password))
+  }
 
-
+  imageSelected(event: any) {
+    console.log(event)
+    this.image = event
   }
 }
