@@ -30,7 +30,6 @@ export class FileUploadService {
     const imagenes_predeterminadas = doc(collection(db, 'imagenes'), 'imagenes-predeterminadas');
     const imagenesSnapshot = await getDoc(imagenes_predeterminadas);
     const url_imagenes = imagenesSnapshot.get('url');
-    console.log(url_imagenes);
     return url_imagenes;
   }
 
