@@ -41,7 +41,6 @@ export class ArticleComponent implements OnInit {
   }
 
   private async initialize_main_article() {
-    console.log()
     const jsonArticle = JSON.parse(await this.firebaseArticleService.loadData_article(this.router.snapshot.paramMap.get("article") || ""));
     this.titulo = jsonArticle.titulo;
     this.contenido = jsonArticle.contenido;

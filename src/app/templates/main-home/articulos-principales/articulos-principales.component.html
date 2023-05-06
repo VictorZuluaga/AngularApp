@@ -2,7 +2,7 @@
     <div class="articulo-central" *ngFor="let articulo of articulos">
         <img class="imagenes" src="{{articulo.imagen}}">
         <div class="contenido">
-            <a href="article">
+            <a href="{{articulo.href}}">
                 <h2 class="titulo">{{articulo.titulo}}</h2>
             </a>
 
@@ -13,5 +13,5 @@
             <p class="resumen">{{articulo.resumen}}</p>
         </div>
     </div>
-    
+
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import FirebaseCommentService from 'src/app/FirebaseServices/firebase-comment.service';
 import Comment from 'src/app/models/Comment.schema';
@@ -16,10 +17,10 @@ export class CajaComentariosComponent {
   comentarios?: Observable<any | null>;
   nuevo_mensaje: string = "";
 
-  constructor(private service: FirebaseCommentService) { };
+  constructor(private service: FirebaseCommentService, private route: ActivatedRoute) { };
 
   publicarComentario() {
-    this.service.saveNewComment(this.nuevo_mensaje);
+    this.service.saveNewComment(this.route.snapshot.paramMap.get("article") || "", this.nuevo_mensaje);
     this.nuevo_mensaje = ""
   }
 
