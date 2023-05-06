@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FileUpload} from "../../models/file-upload.model";
 import {FileUploadService} from "../../FirebaseServices/file-upload.service";
+
 @Component({
   selector: 'app-upload-image',
   templateUrl: './upload-image.component.html',
