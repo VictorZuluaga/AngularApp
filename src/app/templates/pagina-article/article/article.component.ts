@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import FirebaseArticleService from 'src/app/FirebaseServices/firebase-articles.service';
 import FirebaseCommentService from 'src/app/FirebaseServices/firebase-comment.service';
@@ -30,7 +31,7 @@ export class ArticleComponent implements OnInit {
   @Output()
   loadComentarios: EventEmitter<Observable<any>> = new EventEmitter<Observable<any>>();
 
-  constructor(private firebaseArticleService: FirebaseArticleService, private cs: FirebaseCommentService) {
+  constructor(private firebaseArticleService: FirebaseArticleService, private cs: FirebaseCommentService, private router: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -40,7 +41,8 @@ export class ArticleComponent implements OnInit {
   }
 
   private async initialize_main_article() {
-    const jsonArticle = JSON.parse(await this.firebaseArticleService.loadData_article());
+    console.log()
+    const jsonArticle = JSON.parse(await this.firebaseArticleService.loadData_article(this.router.snapshot.paramMap.get("article") || ""));
     this.titulo = jsonArticle.titulo;
     this.contenido = jsonArticle.contenido;
     this.entrada = jsonArticle.entrada;
@@ -48,7 +50,7 @@ export class ArticleComponent implements OnInit {
     this.pie_foto = jsonArticle.pie_foto;
     this.datos = jsonArticle.datos;
     this.fecha = jsonArticle.fecha;
-    this.loadComentarios.emit(this.cs.getComments("article"));
+    this.loadComentarios.emit(this.cs.getComments(this.router.snapshot.paramMap.get("article") || ""));
   }
 
   private async initialize_most_viewed_articles() {

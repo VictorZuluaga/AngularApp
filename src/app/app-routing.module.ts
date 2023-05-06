@@ -15,7 +15,7 @@ const routes: Routes = [
     path: 'upload', component: UploadImageComponent
   },
   {
-    path: 'article', component: PaginaArticleComponent
+    path: 'article/:article', component: PaginaArticleComponent
   },
   {
     path: 'auth',

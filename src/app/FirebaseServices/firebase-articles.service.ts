@@ -15,10 +15,10 @@ export default class FirebaseArticleService {
     constructor(private fss: FirestoreService) {
     }
 
-    async loadData_article(): Promise<string> {
+    async loadData_article(articulo: string): Promise<string> {
 
         //Accedo a la base de datos
-        const article = doc(collection(this.fss.db, 'Articles'), 'article');
+        const article = doc(collection(this.fss.db, 'Articles'), articulo);
         const articleSnapshot = await getDoc(article);
 
         //Compruebo su existencia
