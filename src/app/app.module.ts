@@ -15,6 +15,7 @@ import { PolicyModule } from './templates/policy/policy.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MainHomeModule } from './templates/main-home/main-home.module';
 import { PaginaArticleModule } from './templates/pagina-article/pagina-article.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PaginaArticleModule } from './templates/pagina-article/pagina-article.m
     HttpClientModule,
     PolicyModule,
     MainHomeModule,
-    PaginaArticleModule
+    PaginaArticleModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

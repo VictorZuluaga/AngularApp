@@ -8,10 +8,10 @@
 
     <div *ngFor="let articulo of articulos">
         <img class="imagen" src={{articulo.imagen}}>
-        <a href="{{articulo.href}}">
+        <a routerLink="{{articulo.href}}">
             <h4 class="titulo">{{articulo.titulo}}</h4>
         </a>
-        <a href="{{articulo.href}}">
+        <a routerLink="{{articulo.href}}">
             <p class="datos">{{articulo.datos}}</p>
         </a>
     </div>

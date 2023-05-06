@@ -17,8 +17,8 @@ const routes: Routes = [
     path: "subscribe-form",
     component: SubscribeComponent
   },
-  
-  
+
+
 ];
 
 @NgModule({

@@ -1,11 +1,12 @@
 <header class="header">
     <div class="logo">
-        <a href=""><img src="../../../assets/icons/periodico.png"></a>
+        <a routerLink=""><img
+                src="https://firebasestorage.googleapis.com/v0/b/noticierodb-293b3.appspot.com/o/assets%2Ficons%2Fperiodico.png?alt=media&token=6602f6e6-f1bb-4fd1-8a22-7665294d98d0"></a>
     </div>
 
     <nav>
         <ul class="nav-links">
-            <a href="#">Inicio</a>
+            <a routerLink="">Inicio</a>
             <a href="#">Economía</a>
             <a href="#">Política</a>
             <a href="#">Cultura</a>
@@ -18,11 +19,11 @@
     </div>
 
     <ul class="other-links">
-        <a href="auth/subscribe-form">Subscribe</a>
-        <a *ngIf="!(user |async)?.id" href="auth/login">Log In</a>
+        <a routerLink="/auth/subscribe-form">Subscribe</a>
+        <a *ngIf="!(user |async)?.id" routerLink="/auth/login">Log In</a>
         <a *ngIf="(user |async)?.id"><img class="user-img" src="{{(user|async)?.image}}" alt="">
             {{(user|async)?.name || "User"}}</a>
-        <a *ngIf="!(user |async)?.id" href="auth/signup">Registrarse</a> <a *ngIf="(user |async)?.id"
+        <a *ngIf="!(user |async)?.id" routerLink="/auth/signup">Registrarse</a> <a *ngIf="(user |async)?.id"
             (click)="logout()">Logout</a>
     </ul>
 

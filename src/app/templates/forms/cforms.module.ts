@@ -8,6 +8,7 @@ import { SubscribeFormComponent } from './subscribe-form/subscribe-form.componen
 import { FormsValidationService } from './services/forms-validation.service';
 import { UploadImageComponent } from '../upload-image/upload-image.component';
 import { ImageGalleryComponent } from '../image-gallery/image-gallery.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,6 +18,7 @@ import { ImageGalleryComponent } from '../image-gallery/image-gallery.component'
     CommonModule,
     FormsRoutingModule,
     FormsModule,
+    RouterModule
   ],
   providers: [
     FormsValidationService

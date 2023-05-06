@@ -12,17 +12,18 @@
 
             <fieldset>
                 <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" placeholder="escribe aquí tu nombre..." required>
+                <input [(ngModel)]="nombre" type="text" id="name" name="name" placeholder="escribe aquí tu nombre..."
+                    required>
             </fieldset>
             <fieldset>
                 <label for="lastname">Apellidos</label>
-                <input type="text" id="lastname" name="lastname" placeholder="escribe aquí tu apellido..."
-                    required>
+                <input [(ngModel)]="apellidos" type="text" id="lastname" name="lastname"
+                    placeholder="escribe aquí tu apellido..." required>
             </fieldset>
 
             <fieldset>
                 <label for="country">País</label>
-                <select id="country" name="country" required>
+                <select [(ngModel)]="pais" id="country" name="country" required>
                     <option disabled selected value>Elige una opción</option>
                     <option value="opt1">España</option>
                     <option value="opt2">Francia</option>
@@ -33,7 +34,7 @@
             </fieldset>
             <fieldset>
                 <label for="province">Provincia</label>
-                <select id="province" name="province" required>
+                <select [(ngModel)]="provincia" id="province" name="province" required>
                     <option disabled selected value>Elige una opción</option>
                     <option value="opt1">Las Palmas</option>
                     <option value="opt2">Tenerife</option>

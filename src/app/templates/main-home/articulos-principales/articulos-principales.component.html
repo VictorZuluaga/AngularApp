@@ -2,11 +2,11 @@
     <div class="articulo-central" *ngFor="let articulo of articulos">
         <img class="imagenes" src="{{articulo.imagen}}">
         <div class="contenido">
-            <a href="{{articulo.href}}">
+            <a routerLink="{{articulo.href}}">
                 <h2 class="titulo">{{articulo.titulo}}</h2>
             </a>
 
-            <a href="{{articulo.href}}">
+            <a routerLink="{{articulo.href}}">
                 <p class="datos">{{articulo.datos}}</p>
             </a>
 
