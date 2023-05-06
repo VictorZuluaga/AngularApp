@@ -42,13 +42,7 @@ const routes: Routes = [
     path: 'politica-de-privacidad', component: PoliticaDePrivacidadComponent
   },
   {
-    path: 'tests', loadChildren: () => import('./tests/tests.module').then(m => m.TestsModule)
-  },
-  {
     path: '**', component: NotFoundComponent
-  },
-  {
-    path: 'test', loadChildren: () => import('./tests/tests.module').then(m => m.TestsModule)
   }
 ];
 
