@@ -6,15 +6,17 @@ import { FormsModule } from '@angular/forms'
 import { SignupComponent } from './signup/signup.component';
 import { SubscribeFormComponent } from './subscribe-form/subscribe-form.component';
 import { FormsValidationService } from './services/forms-validation.service';
+import { UploadImageComponent } from '../upload-image/upload-image.component';
+import { ImageGalleryComponent } from '../image-gallery/image-gallery.component';
 
 
 
 @NgModule({
-  declarations: [ LoginComponent, SignupComponent, SubscribeFormComponent],
+  declarations: [ LoginComponent, SignupComponent, SubscribeFormComponent, UploadImageComponent, ImageGalleryComponent ],
   imports: [
     CommonModule,
     FormsRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     FormsValidationService

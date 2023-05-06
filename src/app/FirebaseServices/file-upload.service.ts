@@ -10,11 +10,11 @@ import { FirestoreService } from '../services/dbServices/FirebaseServices/firest
 
 export class FileUploadService {
 
-  private basePath = '';
+  private basePath = '/temp';
 
   constructor(private fss: FirestoreService) { }
 
-  pushFileToStorage(fileUpload: FileUpload): void {
+  pushFileToStorage(fileUpload: FileUpload): Promise<string> {
 
     const filePath = `${this.basePath}/${fileUpload.file.name}`;
     const storageRef = ref(this.fss.storage, filePath);
@@ -22,10 +22,10 @@ export class FileUploadService {
       contentType: 'image/jpeg'
     };
     const uploadTask = uploadBytesResumable(storageRef, fileUpload.file, metadata);
-    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+    return getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
       console.log('File available at', downloadURL);
-    });
-
+      return downloadURL
+    })
   }
 
   async defaultImagesList(): Promise<any[]> {

@@ -6,8 +6,9 @@
 
             <fieldset class="flex">
                 <label for="email">email</label>
-                <input [(ngModel)]="email" type="email" id="email" name="email" placeholder="escribe aquí tu email..." required>                
-            </fieldset>            
+                <input [(ngModel)]="email" type="email" id="email" name="email" placeholder="escribe aquí tu email..."
+                    required>
+            </fieldset>
             <fieldset>
                 <label for="password">contraseña</label>
                 <input [(ngModel)]="password" type="password" id="password" name="password"
@@ -16,8 +17,10 @@
             <fieldset>
                 <label for="repeat-password">repetir contraseña</label>
                 <input [(ngModel)]="repeat_password" type="password" id="repeat-password" name="repeat-password"
-                    placeholder="repite aquí tu contraseña..." required>                 
+                    placeholder="repite aquí tu contraseña..." required>
             </fieldset>
+
+            <app-upload-image></app-upload-image>
         </form>
 
         <p class="error-msg">{{errorMsg}}</p>

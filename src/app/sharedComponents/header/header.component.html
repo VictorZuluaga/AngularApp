@@ -5,7 +5,7 @@
 
     <nav>
         <ul class="nav-links">
-            <a href="">Inicio</a>
+            <a href="#">Inicio</a>
             <a href="#">Economía</a>
             <a href="#">Política</a>
             <a href="#">Cultura</a>
@@ -18,10 +18,10 @@
     </div>
 
     <ul class="other-links">
-        <a href="subscribe">Subscribe</a>
+        <a href="auth/subscribe">Subscribe</a>
         <a *ngIf="!(user |async)?.id" href="auth/login">Log In</a> <a *ngIf="(user |async)?.id">{{(user
             |async)?.name}}</a>
-        <a *ngIf="!(user |async)?.id" href="signup">Registrarse</a> <a *ngIf="(user |async)?.id"
+        <a *ngIf="!(user |async)?.id" href="auth/signup">Registrarse</a> <a *ngIf="(user |async)?.id"
             (click)="logout()">Logout</a>
     </ul>
 

@@ -14,9 +14,7 @@ import { CajaComentariosComponent } from './templates/pagina-article/caja-coment
 import { PolicyModule } from './templates/policy/policy.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MainHomeModule } from './templates/main-home/main-home.module';
-import {PaginaArticleModule} from './templates/pagina-article/pagina-article.module';
-import { UploadImageComponent } from './templates/upload-image/upload-image.component';
-import { ImageGalleryComponent } from './templates/image-gallery/image-gallery.component';
+import { PaginaArticleModule } from './templates/pagina-article/pagina-article.module';
 
 @NgModule({
   declarations: [
@@ -28,9 +26,7 @@ import { ImageGalleryComponent } from './templates/image-gallery/image-gallery.c
     PaginaArticleComponent,
     ArticleComponent,
     CajaComentariosComponent,
-    NotFoundComponent,
-    UploadImageComponent,
-    ImageGalleryComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

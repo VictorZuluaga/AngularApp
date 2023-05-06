@@ -38,5 +38,7 @@ export class SignupComponent {
     }
     // TODO: llamada a Firebase
     console.log("Todo ok, llamada a firebase");
+
+
   }
 }

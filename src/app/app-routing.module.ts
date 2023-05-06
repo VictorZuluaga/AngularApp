@@ -4,15 +4,11 @@ import { SubscribeComponent } from './templates/subscribe/subscribe.component';
 import { MainHomeComponent } from './templates/main-home/main-home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PaginaArticleComponent } from './templates/pagina-article/pagina-article.component';
-import { UploadImageComponent } from './templates/upload-image/upload-image.component';
 
 
 const routes: Routes = [
   {
     path: '', component: MainHomeComponent
-  },
-  {
-    path: 'upload', component: UploadImageComponent
   },
   {
     path: 'article/:article', component: PaginaArticleComponent
