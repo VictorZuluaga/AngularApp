@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsValidationService } from '../services/forms-validation.service';
 import { UserServices } from 'src/app/services/dbServices/Users/user-services.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { UserServices } from 'src/app/services/dbServices/Users/user-services.se
 })
 export class SignupComponent {
 
-  constructor(private validatorService: FormsValidationService, private Users: UserServices) { }
+  constructor(private validatorService: FormsValidationService, private Users: UserServices, private router: Router) { }
 
   email: string = ""
   password: string = ""
@@ -23,6 +24,11 @@ export class SignupComponent {
   btnHandler: () => void = () => {
     this.errorMsg = ""
     const email: any = document.querySelector("#email");
+    if (!this.validatorService.isEmail(email)) {
+      email.setCustomValidity("Introduzca un email valido")
+      email.reportValidity()
+      return
+    }
     if (email.reportValidity() === false) return;
     const password: any = document.querySelector("#password");
     if (this.password.length === 0) {
@@ -43,8 +49,12 @@ export class SignupComponent {
     // TODO: llamada a Firebase
     console.log("Todo ok, llamada a firebase");
     console.log(this.image)
+
     this.Users.create({ email: this.email, password: this.password, image: this.image })?.
-      subscribe(us => this.Users.login(us.email, us.password))
+      subscribe(us => us && this.Users.login(us.email, us.password))
+
+    this.router.navigate([ "" ]);
+
   }
 
   imageSelected(event: any) {
