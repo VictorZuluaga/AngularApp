@@ -1,21 +1,20 @@
-import {db} from "./firebase.service.config";
-import { collection, doc, getDoc} from 'firebase/firestore/lite'
+import { doc, getDoc } from 'firebase/firestore'
 import { Injectable } from "@angular/core";
-import { ArticulosPrincipalesComponent} from '../templates/main-home/articulos-principales/articulos-principales.component';
+import { FirestoreService } from '../services/dbServices/FirebaseServices/firestore.service';
 
 @Injectable({
     providedIn: 'root'
 })
 
-export default class FirebaseCategoryService{
+export default class FirebaseCategoryService {
 
-    constructor(){}
+    constructor(private fss: FirestoreService) { }
 
     async loadData_Main_articles(): Promise<string[]> {
 
         //Accedo a la base de datos
-        const category = doc(collection(db, 'Category'), 'Home');
-        const categorySnapshot_ = await getDoc(category);
+
+        const categorySnapshot_ = await getDoc(doc(this.fss.db, "Category", 'Home'));
         const main_article = categorySnapshot_.get('articulos-principales');
 
         //Compruebo su existencia
@@ -32,8 +31,7 @@ export default class FirebaseCategoryService{
     async loadData_Secondary_articles(): Promise<any> {
 
         //Accedo a la base de datos
-        const category = doc(collection(db, 'Category'), 'Home');
-        const categorySnapshot_ = await getDoc(category);
+        const categorySnapshot_ = await getDoc(doc(this.fss.db, 'Category', 'Home'));
         const secondary_article = categorySnapshot_.get('articulos-secundarios');
 
         //Compruebo su existencia

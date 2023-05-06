@@ -14,7 +14,7 @@ import { UserServices } from 'src/app/services/dbServices/Users/user-services.se
 })
 export class LoginComponent implements OnInit {
 
-  public user?: Observable<User | null>
+  public user?: Observable<User | null> | null
 
   constructor(private Route: ActivatedRoute, private Users: UserServices, private validatorService: FormsValidationService) { }
 
@@ -43,5 +43,45 @@ export class LoginComponent implements OnInit {
     }
     if (!password.reportValidity()) return;
     // TODO: llamada a firebase
+  }
+
+
+  createUser: () => void = () => {
+    this.user = this.Users.create({ email: "admin@admin.com", password: "admin0", name: "Nombre original" }) || this.user
+    this.user?.subscribe(x => console.log(x?.id))
+  }
+
+  findById: () => void = async () => {
+    this.user?.subscribe(u => {
+      this.user = this.Users.findById(u?.id as string)
+      this.user?.subscribe(x => console.log(x?.id))
+    })
+  }
+
+  findByEmail: () => void = async () => {
+    this.user = this.Users.findByEmail("admin@admin.com")
+    this.user?.subscribe(x => console.log(x?.id))
+  }
+
+  update: () => void = async () => {
+    this.user?.subscribe(u => {
+      const newUser = Object.assign({}, u)
+      newUser.name = "Nuevo nombre"
+      this.Users.update(u?.id as string, { ...newUser }).then(x => console.log(x))
+    })
+  }
+
+  delete: () => void = async () => {
+    this.user?.subscribe(u => this.Users.delete(u?.id as string)?.then(x => {
+      this.user = undefined;
+      console.log(x)
+    }))
+  }
+
+  loging: () => void = async () => {
+    this.user?.subscribe(x => {
+      this.Users.login(x?.email as string, x?.password as string)
+      console.log(x?.id)
+    })
   }
 }
