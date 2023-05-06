@@ -10,10 +10,14 @@ export class UploadImageComponent {
 
   constructor(private fileUploadService:FileUploadService) { }
 
-  cargarImagen(event:any){
-    const file = new File(event.target.files, "undefined");
-    const fileUpload = new FileUpload(file);
-    this.fileUploadService.pushFileToStorage(fileUpload);
+  cargarImagenes(event: any) {
+
+    for (let index = 0; index < event.target.files.length; index++) {
+      const file = event.target.files[index];
+      const fileUpload = new FileUpload(file);
+      this.fileUploadService.pushFileToStorage(fileUpload);
+    }
+
   }
 
 }
