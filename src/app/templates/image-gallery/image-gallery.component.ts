@@ -1,22 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FileUploadService } from '../../FirebaseServices/file-upload.service';
 
 @Component({
   selector: 'app-image-gallery',
   templateUrl: './image-gallery.component.html',
   styleUrls: ['./image-gallery.component.css']
 })
-export class ImageGalleryComponent {
-  images = [
-    'https://via.placeholder.com/500x300',
-    'https://via.placeholder.com/500x300',
-    'https://via.placeholder.com/500x300',
-    // Agrega más URLs de imágenes aquí según tus necesidades
-  ];
+export class ImageGalleryComponent implements OnInit {
+  images: any[] | null = null; // Inicializa la propiedad como null en lugar de una promesa vacía
 
-  selectedImage: number = -1; // Inicializa la variable en -1 para indicar que ninguna imagen está seleccionada
+  constructor(private fileUploadService: FileUploadService) { }
+
+  selectedImage = -1;
 
   selectImage(index: number) {
-    this.selectedImage = index;
+    if (this.selectedImage === index) {
+      this.selectedImage = -1;
+    } else {
+      this.selectedImage = index;
+    }
+  }
+
+
+  ngOnInit() {
+    this.fileUploadService.defaultImagesList().then((images) => {
+      this.images = images;
+    });
   }
 }
-  

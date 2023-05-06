@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { storage } from "./firebase.service.config";
+import { db, storage } from "./firebase.service.config";
 import { FileUpload } from '../models/file-upload.model';
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { collection, doc, getDoc } from 'firebase/firestore/lite';
 
 @Injectable({
   providedIn: 'root'
@@ -24,4 +25,13 @@ export class FileUploadService {
     });
     
   }
+
+  async defaultImagesList():Promise<any[]>{
+    const imagenes_predeterminadas = doc(collection(db, 'imagenes'), 'imagenes-predeterminadas');
+    const imagenesSnapshot = await getDoc(imagenes_predeterminadas);
+    const url_imagenes = imagenesSnapshot.get('url');
+    console.log(url_imagenes);
+    return url_imagenes;
+  }
+
 }
