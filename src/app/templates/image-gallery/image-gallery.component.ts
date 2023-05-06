@@ -14,7 +14,7 @@ export class ImageGalleryComponent implements OnInit, OnChanges {
   @Output()
   imageSelected: EventEmitter<string> = new EventEmitter<string>()
 
-  selectedImage: number = -1;
+  selectedImage: number = 0;
 
   images: any[] | null = null; // Inicializa la propiedad como null en lugar de una promesa vacía
 
@@ -25,7 +25,6 @@ export class ImageGalleryComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     this.imageRefP?.then(ref => this.images?.push(ref))
   }
-
 
 
   selectImage(index: number) {
@@ -42,5 +41,7 @@ export class ImageGalleryComponent implements OnInit, OnChanges {
     this.fileUploadService.defaultImagesList().then((images) => {
       this.images = images;
     });
+
+    this.imageSelected.emit(this.images?.[ this.selectedImage ])
   }
 }
