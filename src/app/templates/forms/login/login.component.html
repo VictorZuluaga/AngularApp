@@ -22,7 +22,11 @@
 
         <p class="error-msg">{{errorMsg}}</p>
 
-        <button (click)="btnHandler()" type="submit" form="login-form">Log In</button>
+        <p style="color: white; text-align: center;">Email: {{(user |async)?.id}}</p>
+        <p style="color: white; text-align: center;">Email: {{(user |async)?.email}}</p>
+        <p style="color: white; text-align: center;">Name: {{(user |async)?.name}}</p>
+
+        <!-- <button (click)="btnHandler()" type="submit" form="login-form">Log In</button> -->
 
     </section>
 </div>
