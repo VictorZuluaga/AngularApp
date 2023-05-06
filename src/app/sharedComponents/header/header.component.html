@@ -18,7 +18,7 @@
     </div>
 
     <ul class="other-links">
-        <a href="auth/subscribe">Subscribe</a>
+        <a href="auth/subscribe-form">Subscribe</a>
         <a *ngIf="!(user |async)?.id" href="auth/login">Log In</a>
         <a *ngIf="(user |async)?.id"><img class="user-img" src="{{(user|async)?.image}}" alt="">
             {{(user|async)?.name || "User"}}</a>
