@@ -37,7 +37,7 @@ export default class FirebaseCommentService {
 
             comentarios.push(nuevosDatos);
             await updateDoc(db_ref_comments, { comentarios });
-        })
+        }).unsubscribe()
 
     }
 
