@@ -9,33 +9,22 @@
 <body>
     <main>
         <div class="contenedor-cuadrados">
-            <div class="cuadrado_sub">
-                <h2 class="suscripcion_tipo"></h2>
-                <ul class="suscripcion_ventajas"></ul>
-                <a routerLink="/subscribe-form"><button class="subButton"></button></a>
-            </div>
-
-            <div class="cuadrado_sub">
-                <h2 class="suscripcion_tipo"></h2>
-                <ul class="suscripcion_ventajas"></ul>
-                <a routerLink="/subscribe-form"><button class="subButton"></button></a>
-            </div>
-
-            <div class="cuadrado_sub">
-                <h2 class="suscripcion_tipo"></h2>
-                <ul class="suscripcion_ventajas"></ul>
-                <a routerLink="/subscribe-form"><button class="subButton"></button></a>
+            <div *ngFor="let subscription of subscriptions" class="cuadrado_sub">
+                <h2 class="suscripcion_tipo">{{subscription.type}}</h2>
+                <ul *ngFor="let advantage of subscription.advantages" class="suscripcion_ventajas">
+                    <li>{{advantage}}</li>
+                </ul>
+                <a routerLink="/subscribe-form"><button class="subButton">SUSCRIBIRSE</button></a>
             </div>
         </div>
 
         <div class="subEmpresa">
-            <img class="subEmpresa_icono" src="">
-            <h2 class="subEmpresa_title"></h2>
-            <p class="subEmpresa_ventajas"></p>
-            <a routerLink="/subscribe-form"><button class="subButton"></button></a>
+            <img class="subEmpresa_icono" src="{{enterpriseSub.icon}}">
+            <h2 class="subEmpresa_title">{{enterpriseSub.title}}</h2>
+            <p class="subEmpresa_ventajas">{{enterpriseSub.advantages}}</p>
+            <a routerLink="/subscribe-form"><button class="subButton">Me interesa</button></a>
         </div>
-    </main>
-    <script type="module" type="text/javascript" src="../scripts/json/jsonsubscribe.js"></script>
+    </main>    
 </body>
 
 </html>

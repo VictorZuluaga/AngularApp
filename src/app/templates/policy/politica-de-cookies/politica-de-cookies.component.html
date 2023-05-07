@@ -9,13 +9,13 @@
 <body>
     <main>
         <div class="generic-container">
-            <h1 class="title"></h1>
-            <div class="leyes">
-
-            </div>
+            <h1 class="title">Política de Cookies</h1>
+            <ul *ngFor = "let ley of leyes" class="leyes">
+                <h2>{{ley.title}}</h2>
+                <p>{{ley.value}}</p>
+            </ul>
         </div>
-    </main>
-    <script type="module" type="text/javascript" src="../scripts/json/jsonpoliticadecookies.js"></script>
+    </main>    
 </body>
 
 </html>
