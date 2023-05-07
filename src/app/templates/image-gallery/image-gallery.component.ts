@@ -40,8 +40,7 @@ export class ImageGalleryComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.fileUploadService.defaultImagesList().then((images) => {
       this.images = images;
-    });
+    }).then(() => this.imageSelected.emit(this.images?.[ this.selectedImage ]))
 
-    this.imageSelected.emit(this.images?.[ this.selectedImage ])
   }
 }

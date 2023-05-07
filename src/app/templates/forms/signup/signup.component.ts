@@ -35,15 +35,25 @@ export class SignupComponent implements OnChanges {
   image?: string
 
   btnHandler: () => void = () => {
-    this.errorMsg = ""
     const email: any = document.querySelector("#email");
+    const password: any = document.querySelector("#password");
+    const repeat_password: any = document.querySelector("#repeat-password");
+
+    email.setCustomValidity("")
+    password.setCustomValidity("")
+    repeat_password.setCustomValidity("")
+
+    email.checkValidity()
+    password.checkValidity()
+    repeat_password.checkValidity()
+
+    this.errorMsg = ""
 
     if (!this.validatorService.isEmail(this.email)) {
       email.setCustomValidity("Introduzca un email valido")
       email.reportValidity()
       return
     }
-    const password: any = document.querySelector("#password");
     if (this.password.length === 0) {
       password.setCustomValidity("Es necesario escribir una contraseña.");
       password.reportValidity()
@@ -54,21 +64,19 @@ export class SignupComponent implements OnChanges {
       password.reportValidity()
     }
 
-    const repeat_password: any = document.querySelector("#repeat-password");
     if (!repeat_password.reportValidity()) return;
     if (this.password !== this.repeat_password) {
       this.errorMsg = "Las contraseñas no coinciden"
       return
     }
     // TODO: llamada a Firebase
-    console.log("Todo ok, llamada a firebase");
-    console.log(this.image)
 
-    this.Users.create({ email: this.email, password: this.password, image: this.image })?.
-      subscribe(us => us && this.Users.login(us.email, us.password))
+    this.Users.create({ email: this.email, password: this.password, image: this.image })
+      ?.subscribe(user => this.Users.login(user.email, user.password)
+        .then(b => b && this.router.navigate([ "" ])))
 
-    this.router.navigate([ "" ]);
-
+    email.setCustomValidity("El email ya esta registrado")
+    email.reportValidity()
   }
 
   imageSelected(event: any) {
