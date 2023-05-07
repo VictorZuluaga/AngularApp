@@ -73,7 +73,7 @@ export class SignupComponent implements OnChanges {
 
     this.Users.create({ email: this.email, password: this.password, image: this.image })
       ?.subscribe(user => this.Users.login(user.email, user.password)
-        .then(b => b && this.router.navigate([ "" ])))
+        .then(b => b && this.router.navigate([ "" ]))).unsubscribe()
 
     email.setCustomValidity("El email ya esta registrado")
     email.reportValidity()
