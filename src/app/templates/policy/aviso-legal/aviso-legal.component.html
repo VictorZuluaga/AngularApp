@@ -1,6 +1,8 @@
 <div class="generic-container">
-   <h1 class="title"></h1>
-   <ol class="data"></ol>
+   <h1 class="title">Aviso Legal</h1>
+   <ol class="data">
+      <li *ngFor = "let law of leyes"><b>{{law.title}} </b> {{law.value}}</li>
+   </ol>
    <br>
-   <p class="copyright"></p>
+   <p class="copyright">{{copyright}}</p>
 </div>

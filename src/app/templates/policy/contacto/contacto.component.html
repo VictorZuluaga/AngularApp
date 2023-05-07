@@ -9,29 +9,34 @@
 <body>
     <main>
         <div class="generic-container">
-            <h1></h1>
+            <h1>Contacto</h1>
             <p class="description"></p>
             <div class="headerContacto" id="telephone">
-                <h2></h2>
-                <img src="">
-                <ul></ul>
+                <h2>{{telephone.title}}</h2>
+                <img src="{{telephone.icon}}">
+                <ul *ngFor="let data of telephone.data">
+                    <li>{{data}}</li>
+                </ul>
             </div>
 
             <div class="headerContacto" id="address">
-                <h2></h2>
-                <img src="">
-                <ul></ul>
+                <h2>{{address.title}}</h2>
+                <img src="{{address.icon}}">
+                <ul *ngFor="let data of address.data">
+                    <li>{{data}}</li>
+                </ul>
             </div>
 
             <div class="headerContacto" id="email">
-                <h2></h2>
-                <img src="">
-                <ul></ul>
+                <h2>{{email.title}}</h2>
+                <img src="{{email.icon}}">
+                <ul *ngFor="let data of email.data">
+                    <li>{{data}}</li>
+                </ul>
             </div>
 
         </div>
-    </main>
-    <script type="module" type="text/javascript" src="../scripts/json/jsoncontacto.js"></script>
+    </main>    
 </body>
 
 </html>
